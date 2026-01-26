@@ -1,0 +1,181 @@
+---
+import Icon from './Icon.astro';
+
+interface Service {
+  title: string;
+  description: string;
+  href?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  icon?: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  heading?: string;
+  intro?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  services?: Service[];
+}
+
+const {
+  eyebrow = "Our Services",
+  heading = "[Your Services Heading]",
+  intro = "[Your services description - what you offer and the value you provide]",
+  ctaText = "View All Services",
+  ctaHref = "#services",
+  services = [
+    {
+      title: "[Service 1]",
+      description: "[Brief description of your first service offering]",
+      href: "#service-1",
+      imageSrc: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
+      imageAlt: "[Service 1 image description]",
+    },
+    {
+      title: "[Service 2]",
+      description: "[Brief description of your second service offering]",
+      href: "#service-2",
+      imageSrc: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=80",
+      imageAlt: "[Service 2 image description]",
+    },
+    {
+      title: "[Service 3]",
+      description: "[Brief description of your third service offering]",
+      href: "#service-3",
+      imageSrc: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80",
+      imageAlt: "[Service 3 image description]",
+    },
+    {
+      title: "[Service 4]",
+      description: "[Brief description of your fourth service offering]",
+      href: "#service-4",
+      imageSrc: "https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?auto=format&fit=crop&w=800&q=80",
+      imageAlt: "[Service 4 image description]",
+    },
+    {
+      title: "[Service 5]",
+      description: "[Brief description of your fifth service offering]",
+      href: "#service-5",
+      imageSrc: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80",
+      imageAlt: "[Service 5 image description]",
+    },
+  ],
+} = Astro.props as Props;
+---
+
+<section class="py-24 lg:py-32" id="services">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+      <div class="max-w-2xl">
+        {eyebrow && (
+          <p class="text-sm font-bold uppercase tracking-widest text-primary mb-3">
+            {eyebrow}
+          </p>
+        )}
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance font-serif">
+          {heading}
+        </h2>
+        <p class="mt-6 text-lg text-muted-foreground text-balance leading-relaxed">
+          {intro}
+        </p>
+      </div>
+
+      {ctaText && (
+        <div class="hidden md:block">
+          <a
+            href={ctaHref}
+            class="group inline-flex items-center gap-2 text-primary font-semibold hover:text-primary/80 transition-colors"
+          >
+            {ctaText}
+            <Icon name="tabler:arrow-right" class="h-5 w-5 transform transition-transform group-hover:translate-x-1" />
+          </a>
+        </div>
+      )}
+    </div>
+
+    <!-- Tetris Grid (Desktop: 2 Rows - 2 items then 3 items) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 lg:gap-8 auto-rows-[300px]">
+      
+      {/* Service 1: Palliative (Top Row, Left Half) */}
+      <div class="md:col-span-2 lg:col-span-3 row-span-1 relative group overflow-hidden bg-card border border-transparent hover:border-accent transition-colors duration-300">
+        <a href={services[0].href} class="block h-full w-full">
+          <img src={services[0].imageSrc} alt={services[0].imageAlt} class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+          <div class="absolute inset-0 bg-primary/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90"></div>
+          <div class="absolute bottom-0 left-0 p-8">
+            <h3 class="text-2xl font-bold text-white mb-2 font-serif">{services[0].title}</h3>
+            <p class="text-white/80 text-sm leading-relaxed line-clamp-2 group-hover:line-clamp-none transition-all">{services[0].description}</p>
+          </div>
+        </a>
+      </div>
+
+      {/* Service 2: End of Life (Top Row, Right Half) */}
+      <div class="md:col-span-1 lg:col-span-3 row-span-1 relative group overflow-hidden bg-card border border-transparent hover:border-accent transition-colors duration-300">
+        <a href={services[1].href} class="block h-full w-full">
+          <img src={services[1].imageSrc} alt={services[1].imageAlt} class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+          <div class="absolute inset-0 bg-primary/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90"></div>
+          <div class="absolute bottom-0 left-0 p-8">
+            <h3 class="text-2xl font-bold text-white mb-2 font-serif">{services[1].title}</h3>
+            <p class="text-white/80 text-sm leading-relaxed line-clamp-2 group-hover:line-clamp-none transition-all">{services[1].description}</p>
+          </div>
+        </a>
+      </div>
+
+      {/* Service 3: Domiciliary (Bottom Row, Left Third) */}
+      <div class="md:col-span-1 lg:col-span-2 row-span-1 relative group overflow-hidden bg-card border border-transparent hover:border-accent transition-colors duration-300">
+        <a href={services[2].href} class="block h-full w-full">
+          <img src={services[2].imageSrc} alt={services[2].imageAlt} class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+          <div class="absolute inset-0 bg-primary/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90"></div>
+          <div class="absolute bottom-0 left-0 p-8">
+            <h3 class="text-xl font-bold text-white mb-2 font-serif">{services[2].title}</h3>
+            <p class="text-white/80 text-sm leading-relaxed line-clamp-2">{services[2].description}</p>
+          </div>
+        </a>
+      </div>
+
+      {/* Service 4: Clinical (Bottom Row, Middle Third) */}
+      <div class="md:col-span-2 lg:col-span-2 row-span-1 relative group overflow-hidden bg-card border border-transparent hover:border-accent transition-colors duration-300">
+        <a href={services[3].href} class="block h-full w-full">
+          <img src={services[3].imageSrc} alt={services[3].imageAlt} class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+          <div class="absolute inset-0 bg-primary/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90"></div>
+          <div class="absolute bottom-0 left-0 p-8">
+            <h3 class="text-xl font-bold text-white mb-2 font-serif">{services[3].title}</h3>
+            <p class="text-white/80 text-sm leading-relaxed line-clamp-2 group-hover:line-clamp-none transition-all">{services[3].description}</p>
+          </div>
+        </a>
+      </div>
+
+      {/* Service 5: Live-in (Bottom Row, Right Third) */}
+      <div class="md:col-span-2 lg:col-span-2 row-span-1 relative group overflow-hidden bg-card border border-transparent hover:border-accent transition-colors duration-300">
+        <a href={services[4].href} class="block h-full w-full">
+          <img src={services[4].imageSrc} alt={services[4].imageAlt} class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+          <div class="absolute inset-0 bg-primary/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90"></div>
+          <div class="absolute bottom-0 left-0 p-8">
+            <h3 class="text-xl font-bold text-white mb-2 font-serif">{services[4].title}</h3>
+            <p class="text-white/80 text-sm leading-relaxed line-clamp-2 group-hover:line-clamp-none transition-all">{services[4].description}</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Mobile CTA -->
+    {ctaText && (
+      <div class="mt-12 md:hidden text-center">
+        <a
+          href={ctaHref}
+          class="inline-flex items-center justify-center bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow-lg transition-all hover:bg-primary/90"
+        >
+          {ctaText}
+        </a>
+      </div>
+    )}
+  </div>
+</section>

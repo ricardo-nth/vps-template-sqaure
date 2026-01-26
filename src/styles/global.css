@@ -1,0 +1,180 @@
+/* ============================================================================
+   SQAURE TEMPLATE - BRAND STYLES
+   ============================================================================ */
+
+@import "tailwindcss";
+@import "preline/variants.css";
+@source "../../node_modules/preline/dist/*.js";
+
+/**
+ * Design token palette for Sqaure Healthcare Template.
+ * Theme: Earthy, Natural, Homely, Autumnal.
+ */
+
+:root {
+  /* Neutral surfaces - Aged Paper / Warm Beige */
+  --background: oklch(0.98 0.02 95);       /* Warm Off-White/Cream */
+  --foreground: oklch(0.25 0.04 80);       /* Deep Loam/Brown Text */
+  --card: oklch(0.99 0.01 95);             /* Slightly lighter cream for cards */
+  --card-foreground: oklch(0.25 0.04 80);
+
+  /* BRAND COLORS - Earth & Autumn */
+  --primary: oklch(0.52 0.14 145);         /* 🎨 Earthy Moss Green */
+  --primary-foreground: oklch(0.98 0.02 95); /* Cream text on green */
+
+  /* Secondary - Warm Sand/Beige */
+  --secondary: oklch(0.92 0.04 90);        /* Warm Sand */
+  --secondary-foreground: oklch(0.30 0.05 80);
+
+  /* Custom navigation colors */
+  --nav-primary-bg: oklch(0.98 0.02 95);       /* Match background */
+  --nav-primary-text: oklch(0.52 0.14 145);    /* Green text for links */
+  --nav-secondary-bg: oklch(0.52 0.14 145);    /* Green bg for buttons */
+  --nav-secondary-text: oklch(0.98 0.02 95);   /* Cream text */
+
+  /* Muted/subtle text - Parchment tones */
+  --muted: oklch(0.94 0.03 95);
+  --muted-foreground: oklch(0.55 0.04 80);
+
+  /* Accent - Autumn Leaves (Burnt Orange/Red) */
+  --accent: oklch(0.65 0.16 50);           /* Warm Autumn Orange */
+  --accent-foreground: oklch(0.98 0.02 95);
+
+  /* Error/destructive states - Dried Red */
+  --destructive: oklch(0.55 0.15 25);
+  --destructive-foreground: oklch(0.98 0.02 95);
+
+  /* Borders and inputs - Warm Taupe */
+  --border: oklch(0.88 0.03 90);
+  --input: oklch(0.88 0.03 90);
+
+  /* Focus ring - matches primary green */
+  --ring: oklch(0.52 0.14 145);
+
+  /* Hero overlays */
+  --hero-overlay: oklch(0.98 0.02 95 / 0.85);
+  --hero-overlay-foreground: oklch(0.25 0.04 80);
+}
+
+.dark {
+  /* Dark mode - Deep Forest & Earth */
+  --background: oklch(0.20 0.03 145);      /* Deep Forest Green/Grey */
+  --foreground: oklch(0.95 0.02 95);       /* Parchment Text */
+  --card: oklch(0.25 0.03 145);
+  --card-foreground: oklch(0.95 0.02 95);
+
+  /* BRAND COLORS */
+  --primary: oklch(0.65 0.14 145);         /* Lighter Sage for dark mode */
+  --primary-foreground: oklch(0.15 0.04 145);
+
+  /* Dark mode backgrounds */
+  --secondary: oklch(0.28 0.04 80);        /* Dark Earth */
+  --secondary-foreground: oklch(0.95 0.02 95);
+
+  /* Custom navigation colors */
+  --nav-primary-bg: oklch(0.20 0.03 145);
+  --nav-primary-text: oklch(0.65 0.14 145);
+  --nav-secondary-bg: oklch(0.65 0.14 145);
+  --nav-secondary-text: oklch(0.15 0.04 145);
+
+  /* Muted */
+  --muted: oklch(0.25 0.03 145);
+  --muted-foreground: oklch(0.75 0.02 95);
+
+  /* Accent */
+  --accent: oklch(0.65 0.16 50);           /* Keep Autumn Orange */
+  --accent-foreground: oklch(0.95 0.02 95);
+
+  /* Error states */
+  --destructive: oklch(0.60 0.15 25);
+  --destructive-foreground: oklch(0.95 0.02 95);
+
+  /* Borders */
+  --border: oklch(0.35 0.03 145);
+  --input: oklch(0.35 0.03 145);
+
+  /* Focus ring */
+  --ring: oklch(0.65 0.14 145);
+
+  /* Hero overlays */
+  --hero-overlay: oklch(0.15 0.04 145 / 0.8);
+  --hero-overlay-foreground: oklch(0.95 0.02 95);
+}
+
+@theme inline {
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: var(--font-serif), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-hero-overlay: var(--hero-overlay);
+  --color-hero-overlay-foreground: var(--hero-overlay-foreground);
+  --color-nav-primary: var(--nav-primary-bg);
+  --color-nav-primary-foreground: var(--nav-primary-text);
+  --color-nav-secondary: var(--nav-secondary-bg);
+  --color-nav-secondary-foreground: var(--nav-secondary-text);
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  
+  /* Default to Lato (Sans) for body, but allow Serif for specific uses */
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  /* Use Merriweather (Serif) for Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+@custom-variant hover (&:hover);
+
+*:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* ============================================================================
+   PREMIUM UTILITIES
+   ============================================================================ */
+
+@layer utilities {
+  .glass {
+    @apply bg-white/60 backdrop-blur-md border-b border-white/30;
+  }
+  
+  .dark .glass {
+    @apply bg-black/60 border-white/10;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .antialiased-premium {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

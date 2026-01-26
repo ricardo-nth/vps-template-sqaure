@@ -1,0 +1,42 @@
+---
+import Icon from './Icon.astro';
+
+interface NavLink {
+  label: string;
+  href: string;
+  iconName: string;
+}
+
+interface Props {
+  links?: NavLink[];
+}
+
+const {
+  links = [
+    { label: "Read our Reviews", href: "#reviews", iconName: "tabler:star" },
+    { label: "CQC Rating: Outstanding", href: "#cqc-ratings", iconName: "tabler:shield-check" },
+    { label: "Latest Inspection Report", href: "#cqc-report", iconName: "tabler:file-text" },
+    { label: "Patient Portal", href: "#portal", iconName: "tabler:user-circle" }
+  ]
+} = Astro.props as Props;
+---
+
+<div class="w-full bg-primary text-primary-foreground border-b border-primary-foreground/10">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-end h-10">
+      <ul class="flex items-center gap-6 text-xs font-medium tracking-wide">
+        {links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="flex items-center gap-2 hover:text-white/80 transition-colors group"
+            >
+              <Icon name={link.iconName} size="16" class="opacity-70 group-hover:opacity-100 transition-opacity" />
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </nav>
+</div>

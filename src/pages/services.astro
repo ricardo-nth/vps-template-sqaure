@@ -1,0 +1,85 @@
+---
+import SiteLayout from '@layouts/SiteLayout.astro';
+import { siteConfig } from '@/config/site';
+import PageHero from '@components/PageHero.astro';
+import SupportedLivingFeatures from '@components/SupportedLivingFeatures.astro';
+import ServiceSpecialties from '@components/ServiceSpecialties.astro';
+import CompliancePillars from '@components/CompliancePillars.astro';
+import CareDeliveryProcess from '@components/CareDeliveryProcess.astro';
+import ContactSection from '@components/ContactSection.astro';
+
+const metadata = {
+  title: `Services - ${siteConfig.name}`,
+  description: `Person-centred Supported Living services for adults with diverse needs including learning disabilities, mental health, physical disabilities, older adults, and autism. CQC-registered provider committed to regulatory excellence and outstanding care outcomes.`,
+  schema: {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Supported Living Services',
+    description: 'Comprehensive, CQC-compliant supported living services promoting independence and dignity.',
+    mainEntity: {
+      '@type': 'Service',
+      name: 'Supported Living Care',
+      description: 'Person-centred supported living for adults with complex needs. Fully CQC registered.',
+      serviceType: 'Supported Living',
+      provider: {
+        '@type': 'Organization',
+        name: siteConfig.name
+      },
+      areaServed: 'United Kingdom',
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Care Services',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Domiciliary Care'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Live-in Care'
+            }
+          }
+        ]
+      }
+    }
+  }
+};
+---
+
+<SiteLayout metadata={metadata}>
+  <PageHero
+    heading="CQC-Compliant Supported Living Services"
+    subheading="Empowering independence for adults with learning disabilities, mental health needs, autism, physical disabilities, and older adults. Outstanding care from a fully regulated provider you can trust for registration and ongoing compliance."
+    primaryCtaText="Enquire Today"
+    primaryCtaHref="/contact"
+    secondaryCtaText="Explore Services"
+    secondaryCtaHref="#features"
+    imageSrc="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    imageAlt="CQC Compliant Services"
+  />
+
+  <section id="features">
+    <SupportedLivingFeatures />
+  </section>
+
+  <ServiceSpecialties />
+
+  <CompliancePillars />
+
+  <CareDeliveryProcess />
+
+  <ContactSection
+    heading="[Your Services Page CTA Heading]"
+    intro="[Your services page CTA description - invite visitors to learn more or get in touch]"
+    phoneLabel="[Your Phone]"
+    phoneHref="tel:[YourPhoneNumber]"
+    emailLabel="[email]@yourdomain.co.uk"
+    emailHref="mailto:[email]@yourdomain.co.uk"
+    address="[Your City, Region]"
+  />
+</SiteLayout>

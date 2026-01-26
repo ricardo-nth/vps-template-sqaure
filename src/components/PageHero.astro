@@ -1,0 +1,132 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  heading: string;
+  subheading?: string;
+  primaryCtaText?: string;
+  primaryCtaHref?: string;
+  secondaryCtaText?: string;
+  secondaryCtaHref?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  socialProofTitle?: string;
+  socialProofSubtitle?: string;
+  socialProofCountLabel?: string;
+}
+
+const {
+  heading,
+  subheading,
+  primaryCtaText = "Get in Touch",
+  primaryCtaHref = "/contact",
+  secondaryCtaText,
+  secondaryCtaHref,
+  imageSrc = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+  imageAlt = "Healthcare professional",
+  socialProofTitle = "Verified Excellence",
+  socialProofSubtitle = "Top-rated care provider",
+  socialProofCountLabel = "+2k",
+} = Astro.props as Props;
+---
+
+<section class="relative bg-background py-12 lg:py-16 overflow-hidden border-b border-border">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="text-center lg:text-left">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 tracking-tight font-serif">
+          <Fragment set:html={heading} />
+        </h1>
+        {subheading && (
+          <p class="text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+            {subheading}
+          </p>
+        )}
+        <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+          <a href={primaryCtaHref} class="bg-primary text-primary-foreground font-semibold py-4 px-8 hover:bg-primary/90 transition-colors duration-300 shadow-sm">
+            {primaryCtaText}
+          </a>
+          {secondaryCtaText && secondaryCtaHref && (
+            <a href={secondaryCtaHref} class="bg-transparent border-2 border-primary text-primary font-semibold py-4 px-8 hover:bg-primary hover:text-primary-foreground transition-colors duration-300">
+              {secondaryCtaText}
+            </a>
+          )}
+        </div>
+      </div>
+      
+      {/* Visual Column - Supports slot or default image */}
+      <div class="relative items-center justify-center lg:h-[640px] w-full hidden lg:flex animate-fade-in-left delay-300">
+        {Astro.slots.has('visual') ? (
+          <slot name="visual" />
+        ) : (
+          <>
+            <div class="absolute inset-0 h-5/6 m-auto bg-accent/10 border border-accent/30 -z-10 translate-x-4 translate-y-4"></div>
+            <img
+              src={imageSrc}
+              alt={imageAlt}
+              class="relative h-5/6 w-full object-cover border border-border"
+            />
+            
+            {/* Floating Card (Blocky) */}
+            <div class="absolute bottom-12 -left-12 bg-primary p-6 shadow-xl max-w-xs border border-primary-foreground/10 animate-bounce-slow text-primary-foreground">
+              <div class="flex items-center gap-4 mb-3">
+                <div class="h-10 w-10 bg-white/10 flex items-center justify-center text-white">
+                  <Icon name="tabler:check" class="h-6 w-6" />
+                </div>
+                <div>
+                  <p class="font-semibold">{socialProofTitle}</p>
+                  <p class="text-xs text-primary-foreground/80">{socialProofSubtitle}</p>
+                </div>
+              </div>
+              <div class="flex -space-x-2">
+                {[1, 2, 3, 4].map((i) => (
+                  <img
+                    class="inline-block h-8 w-8 ring-2 ring-primary"
+                    src={`https://randomuser.me/api/portraits/women/${i + 40}.jpg`}
+                    alt=""
+                  />
+                ))}
+                <div class="h-8 w-8 bg-white text-primary flex items-center justify-center text-xs font-medium ring-2 ring-primary">
+                  {socialProofCountLabel}
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes bounce-slow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-fade-in-left {
+    animation: fade-in-left 1s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce-slow 4s infinite ease-in-out;
+  }
+
+  .delay-300 { animation-delay: 300ms; }
+</style>

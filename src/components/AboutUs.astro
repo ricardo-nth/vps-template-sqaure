@@ -1,0 +1,81 @@
+---
+/**
+ * AboutUs.astro - About Us section component
+ * 
+ * Reusable component for displaying the About Us section with
+ * company information, mission statement, and contact details.
+ */
+
+interface Props {
+  eyebrow?: string;
+  heading?: string;
+  description?: string[];
+  imageSrc?: string;
+  imageAlt?: string;
+  phoneLabel?: string;
+  phoneHref?: string;
+  sectionId?: string;
+}
+
+const {
+  eyebrow = "About Us",
+  heading = "[Your About Section Heading]",
+  description = [
+    "[First paragraph about your business - who you are and what you do]",
+    "[Second paragraph - your vision and approach to service]",
+    "[Third paragraph - your commitment to clients and community]"
+  ],
+  imageSrc = "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&w=900&q=80",
+  imageAlt = "[Your about section image description]",
+  phoneLabel = "[Your Phone]",
+  phoneHref = "tel:[YourPhoneNumber]",
+  sectionId = "about"
+} = Astro.props;
+---
+
+<section class="bg-background py-24 lg:py-32" id={sectionId}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Image Column -->
+      <div class="relative order-2 lg:order-1">
+        <!-- Offset Background Square -->
+        <div class="absolute -top-4 -left-4 w-full h-full bg-accent/10 border border-accent/30 z-0"></div>
+        
+        <div class="relative z-10 aspect-square bg-muted border border-border">
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            class="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+          />
+          <div class="absolute inset-0 bg-primary/20 mix-blend-multiply pointer-events-none"></div>
+        </div>
+      </div>
+
+      <!-- Content Column -->
+      <div class="order-1 lg:order-2 space-y-8">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-widest text-primary mb-3">{eyebrow}</p>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance font-serif">
+            {heading}
+          </h2>
+        </div>
+        
+        <div class="space-y-6 text-lg text-muted-foreground leading-relaxed border-l-4 border-accent/30 pl-6">
+          {description.map((paragraph) => (
+            <p set:html={paragraph}></p>
+          ))}
+        </div>
+
+        <div class="pt-4">
+          <a
+            href={phoneHref}
+            class="inline-flex items-center gap-3 px-8 py-4 bg-secondary border border-accent text-foreground font-bold text-lg hover:bg-accent hover:text-white transition-colors shadow-sm hover:shadow-md"
+          >
+            <span>Need to know more? Call us: {phoneLabel}</span>
+            <span class="transform transition-transform group-hover:translate-x-1">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

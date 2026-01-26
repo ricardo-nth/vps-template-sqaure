@@ -1,0 +1,226 @@
+---
+import Icon from "./Icon.astro";
+
+interface Point {
+  title: string;
+  description: string;
+  iconName: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  heading?: string;
+  intro?: string;
+  points?: Point[];
+  imageSrc?: string;
+  imageAlt?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  class?: string;
+  id?: string;
+}
+
+const {
+  eyebrow = "Why Choose Us",
+
+  heading = "A higher standard of care",
+
+  intro = "We believe that exceptional care goes beyond just meeting medical needs. It's about building relationships, fostering independence, and treating every individual with the utmost respect.",
+
+  imageSrc = "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2070&q=80",
+
+  imageAlt = "Peaceful landscape with rolling hills",
+
+  ctaText,
+
+  ctaHref,
+
+  class: className = "",
+
+  id,
+
+  points = [
+    {
+      title: "[Differentiator 1]",
+
+      description:
+        "[Description of your first key differentiator or benefit]",
+
+      iconName: "tabler:shield-check",
+    },
+
+    {
+      title: "[Differentiator 2]",
+
+      description:
+        "[Description of your second key differentiator or benefit]",
+
+      iconName: "tabler:clipboard-list",
+    },
+
+    {
+      title: "[Differentiator 3]",
+
+      description:
+        "[Description of your third key differentiator or benefit]",
+
+      iconName: "tabler:users-group",
+    },
+
+    {
+      title: "[Differentiator 4]",
+
+      description:
+        "[Description of your fourth key differentiator or benefit]",
+
+      iconName: "tabler:clock-hour-4",
+    },
+  ],
+} = Astro.props as Props;
+---
+
+<section
+  class={`py-24 lg:py-32 overflow-hidden ${className}`}
+  id={id || "why-us"}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class="relative bg-[#F8F5E6] border border-accent/30 min-h-[600px] flex flex-col"
+    >
+      <!-- Image Background Layer (Behind) -->
+
+      <div
+        class="hidden lg:block absolute inset-y-0 right-0 w-[70%] z-0 pointer-events-none"
+      >
+        <div
+          class="absolute inset-0 w-full h-full"
+          style="clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);"
+        >
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            class="w-full h-full object-cover opacity-80"
+          />
+
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-[#F8F5E6] via-primary/40 to-primary/60 mix-blend-multiply"
+          >
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Layer (Foreground) -->
+
+      <div
+        class="relative z-10 p-8 sm:p-12 lg:p-16 flex-1 flex flex-col justify-center"
+      >
+        <!-- Header -->
+
+        <div class="max-w-2xl mb-12">
+          {
+            eyebrow && (
+              <p class="text-sm font-bold uppercase tracking-widest text-primary mb-3 w-fit">
+                {eyebrow}
+              </p>
+            )
+          }
+
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance mb-6 font-serif w-fit"
+          >
+            {heading}
+          </h2>
+
+          <p
+            class="text-lg text-muted-foreground text-balance leading-relaxed max-w-xl"
+          >
+            {intro}
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+          <!-- Points Grid (Left/Center - Overlaps Image) -->
+
+          <div class="lg:col-span-8 grid sm:grid-cols-2 gap-6">
+            {
+              points.map((point) => (
+                <div class="bg-white border border-border/50 p-8 hover:border-accent transition-colors duration-300 group shadow-sm">
+                  <div class="h-12 w-12 bg-primary text-primary-foreground flex items-center justify-center mb-4 group-hover:bg-accent transition-colors">
+                    <Icon name={point.iconName} size="24" />
+                  </div>
+
+                  <h3 class="text-xl font-bold text-foreground mb-3 font-serif">
+                    {point.title}
+                  </h3>
+
+                  <p class="text-muted-foreground leading-relaxed">
+                    {point.description}
+                  </p>
+                </div>
+              ))
+            }
+          </div>
+
+          <!-- Social Proof (Right - Sitting on Image) -->
+
+          <div class="lg:col-span-4 flex flex-col">
+            <div
+              class="bg-primary p-8 h-full flex flex-col justify-between text-primary-foreground shadow-lg"
+            >
+              <div>
+                <div class="flex gap-1 mb-6 text-white/90">
+                  {
+                    [1, 2, 3, 4, 5].map(() => (
+                      <Icon name="tabler:star" class="w-5 h-5 fill-current" />
+                    ))
+                  }
+                </div>
+
+                <div class="mb-6">
+                  <Icon name="tabler:quote" class="w-10 h-10 opacity-50 mb-4" />
+
+                  <p class="text-xl font-serif leading-relaxed italic">
+                    "[Client testimonial - what they loved about your service]"
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center gap-4 pt-6 border-t border-primary-foreground/20"
+              >
+                <div
+                  class="h-12 w-12 bg-white/10 flex items-center justify-center font-bold text-lg"
+                >
+                  [X]
+                </div>
+
+                <div>
+                  <p class="font-bold">[Client Name]</p>
+
+                  <p class="text-sm opacity-80">[Client Relationship]</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {
+          ctaText && ctaHref && (
+            <div class="mt-12">
+              <a
+                href={ctaHref}
+                class="inline-flex items-center gap-2 text-primary font-bold text-lg hover:text-accent transition-colors group py-2 pr-4"
+              >
+                {ctaText}
+
+                <span class="transform transition-transform group-hover:translate-x-1">
+                  →
+                </span>
+              </a>
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>

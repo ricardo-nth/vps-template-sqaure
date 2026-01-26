@@ -1,0 +1,96 @@
+---
+import Icon from './Icon.astro';
+
+interface Step {
+  number: number;
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  heading?: string;
+  subheading?: string;
+  steps?: Step[];
+}
+
+const {
+  heading = "Our Proven Delivery Process",
+  subheading = "Streamlined from assessment to excellence - designed for CQC compliance and exceptional outcomes.",
+  steps = [
+    {
+      number: 1,
+      icon: "tabler:clipboard-search",
+      title: "Comprehensive Assessment",
+      description: "In-depth needs analysis with service user, family, and clinical input. CQC-aligned risk evaluation."
+    },
+    {
+      number: 2,
+      icon: "tabler:file-text",
+      title: "Custom Care Plan",
+      description: "Co-created, SMART-goal based plan approved by all stakeholders. Regular review schedule established."
+    },
+    {
+      number: 3,
+      icon: "tabler:users",
+      title: "Expert Implementation",
+      description: "Hand-picked, DBS-checked team with specialist training. 24/7 coordination and escalation protocols."
+    },
+    {
+      number: 4,
+      icon: "tabler:refresh",
+      title: "Continuous Excellence",
+      description: "Weekly check-ins, monthly audits, quarterly CQC-style reviews. Adaptive improvements."
+    }
+  ]
+} = Astro.props as Props;
+---
+
+<section class="relative py-24 lg:py-32 overflow-hidden bg-muted/30">
+  
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-20">
+      <p class="text-sm font-bold uppercase tracking-widest text-primary mb-3">The Journey</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-6 font-serif">
+        {heading}
+      </h2>
+      <p class="text-xl text-muted-foreground leading-relaxed">
+        {subheading}
+      </p>
+    </div>
+
+    <div class="relative grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {steps.map((step, index) => (
+        <div class="relative group">
+          <!-- Connector Line (Desktop only, not on last item) -->
+          {index !== steps.length - 1 && (
+            <div class="hidden lg:block absolute top-8 left-1/2 w-full h-0.5 bg-primary/20 z-0"></div>
+          )}
+          
+          <div class="relative z-10 flex flex-col items-center text-center">
+            <!-- Number & Icon Container -->
+            <div class="relative mb-8">
+              <div class="w-16 h-16 bg-card border border-border shadow-sm flex items-center justify-center group-hover:border-accent transition-all duration-300 z-10 relative">
+                <Icon name={step.icon} class="w-8 h-8 text-primary" />
+              </div>
+              <!-- Number Badge -->
+              <div class="absolute -top-3 -right-3 w-8 h-8 bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold shadow-sm border border-background z-20">
+                {step.number}
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="bg-card border border-border p-6 hover:border-accent transition-all duration-300 w-full h-full">
+              <h3 class="text-lg font-bold text-foreground mb-3 font-serif group-hover:text-primary transition-colors">
+                {step.title}
+              </h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">
+                {step.description}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,157 @@
+---
+import Icon from './Icon.astro';
+import { Image } from 'astro:assets';
+import logo from '@assets/placeholder-logo.svg';
+
+interface NavLink {
+  label: string;
+  href: string;
+  active?: boolean;
+}
+
+interface Props {
+  brandName?: string;
+  brandHref?: string;
+  navLinks?: NavLink[];
+  ctaText?: string;
+  ctaHref?: string;
+}
+
+const {
+  brandName = "[Business Name]",
+  brandHref = "/",
+  navLinks = [
+    { label: "About", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Our Service Model", href: "/our-service-model" },
+    { label: "Contact", href: "/contact" }
+  ],
+  ctaText = "Get Started",
+  ctaHref = "#contact",
+} = Astro.props as Props;
+
+// Determine active link based on current path
+const currentPath = Astro.url.pathname;
+const activeNavLinks = navLinks.map(link => ({
+  ...link,
+  active: currentPath === link.href
+}));
+---
+
+<header class="sticky top-0 z-50 w-full transition-all duration-300 glass border-b border-primary/10">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-stretch justify-between">
+    <!-- Brand -->
+    <div class="flex items-center">
+      <a href={brandHref} class="flex items-center gap-4 group">
+        <Image
+          src={logo}
+          alt="[Business Name] Logo"
+          class="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-105"
+          loading="eager"
+        />
+        <span class="text-xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors font-serif">
+          {brandName}
+        </span>
+      </a>
+    </div>
+
+    <!-- Desktop navigation (Centered) -->
+    <div class="hidden lg:flex flex-1 items-center justify-center px-8">
+      <ul class="flex items-center gap-10 text-base font-medium">
+        {activeNavLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class={`relative py-2 transition-colors hover:text-primary ${
+                link.active ? "text-primary font-semibold" : "text-muted-foreground"
+              }`}
+            >
+              {link.label}
+              {link.active && (
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary"></span>
+              )}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- CTA (Right - All Green Bar) -->
+    <div class="hidden lg:flex h-full">
+      {ctaText && (
+        <a
+          href={ctaHref}
+          class="flex items-center justify-center h-full px-10 bg-primary text-primary-foreground text-base font-semibold transition-colors hover:bg-primary/90"
+        >
+          {ctaText}
+        </a>
+      )}
+    </div>
+
+    <!-- Mobile menu button -->
+    <div class="flex items-center lg:hidden">
+      <button
+        type="button"
+        class="hs-collapse-toggle inline-flex items-center justify-center p-2 text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        data-hs-collapse="#healthcare-mobile-nav"
+        aria-controls="healthcare-mobile-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <Icon 
+          name="tabler:menu-2" 
+          class="hs-collapse-open:hidden h-8 w-8" 
+        />
+        <Icon 
+          name="tabler:x" 
+          class="hs-collapse-open:block hidden h-8 w-8" 
+        />
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile navigation -->
+  <div id="healthcare-mobile-nav" class="hs-collapse hidden overflow-hidden transition-all duration-300 border-t border-border bg-background lg:hidden absolute top-full left-0 w-full shadow-xl">
+    <div class="p-0 space-y-0 divide-y divide-border">
+      <ul class="flex flex-col">
+        {activeNavLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class={`block px-6 py-4 text-lg font-medium transition-colors hover:bg-muted ${
+                link.active ? "text-primary bg-primary/5" : "text-foreground"
+              }`}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      {ctaText && (
+        <div class="p-6">
+          <a
+            href={ctaHref}
+            class="flex w-full items-center justify-center bg-primary px-4 py-4 text-lg font-semibold text-primary-foreground hover:bg-primary/90 transition-all"
+          >
+            {ctaText}
+          </a>
+        </div>
+      )}
+    </div>
+  </div>
+</header>
+
+<script>
+  // Add scroll effect to navbar
+  const header = document.querySelector('header');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      header?.classList.add('shadow-sm');
+    } else {
+      header?.classList.remove('shadow-sm');
+    }
+  });
+</script>

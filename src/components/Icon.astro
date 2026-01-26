@@ -1,0 +1,87 @@
+---
+import { Icon as AstroIcon } from 'astro-icon/components';
+
+interface Props {
+  /**
+   * The name of the icon to display.
+   * For Tabler icons, use format: "tabler:icon-name" (e.g., "tabler:brand-airbnb")
+   * For local icons, use the file path relative to src/icons/ (e.g., "logo")
+   */
+  name: string;
+  
+  /**
+   * Size of the icon. Can be a number (pixels) or string with units.
+   * @default "1em"
+   */
+  size?: number | string;
+  
+  /**
+   * Width of the icon. Overrides size if provided.
+   */
+  width?: number | string;
+  
+  /**
+   * Height of the icon. Overrides size if provided.
+   */
+  height?: number | string;
+  
+  /**
+   * CSS classes to apply to the icon
+   */
+  class?: string;
+  
+  /**
+   * Accessible title for the icon
+   */
+  title?: string;
+  
+  /**
+   * Accessible description for the icon
+   */
+  desc?: string;
+  
+  /**
+   * ARIA label for the icon
+   */
+  'aria-label'?: string;
+  
+  /**
+   * Whether the icon is decorative (hidden from screen readers)
+   * @default false
+   */
+  'aria-hidden'?: boolean;
+}
+
+const {
+  name,
+  size,
+  width,
+  height,
+  class: className,
+  title,
+  desc,
+  'aria-label': ariaLabel,
+  'aria-hidden': ariaHidden = false,
+  ...rest
+} = Astro.props;
+
+// Defensive check: if icon name is empty or undefined, use a fallback
+const iconName = (!name || name.trim() === '') ? 'tabler:placeholder' : name;
+---
+
+{!name || name.trim() === '' ? (
+  <div class={className} {...rest}></div>
+) : (
+  <AstroIcon
+    name={iconName}
+    size={size}
+    width={width}
+    height={height}
+    class={className}
+    title={title}
+    desc={desc}
+    aria-label={ariaLabel}
+    aria-hidden={ariaHidden}
+    {...rest}
+  />
+)}

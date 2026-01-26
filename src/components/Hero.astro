@@ -1,0 +1,144 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  heading?: string;
+  subheading?: string;
+  primaryCtaText?: string;
+  primaryCtaHref?: string;
+  secondaryCtaText?: string;
+  secondaryCtaHref?: string;
+  rating?: string;
+  ratingLabel?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+}
+
+const {
+  heading = "[Your Headline - What You Do Best]",
+  subheading = "[Your subheading - describe your unique value proposition and who you serve]",
+  primaryCtaText = "Get Started",
+  primaryCtaHref = "/contact",
+  secondaryCtaText = "Learn More",
+  secondaryCtaHref = "#services",
+  rating = "",
+  ratingLabel = "[YOUR REGION]",
+  imageSrc = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+  imageAlt = "[Describe your hero image]",
+} = Astro.props as Props;
+---
+
+<section class="relative w-full bg-background overflow-hidden border-b border-border">
+  <div class="lg:grid lg:grid-cols-3 min-h-[60vh]">
+    
+    <!-- Content Column (2/3) -->
+    <div class="lg:col-span-2 relative flex flex-col justify-center px-6 py-12 sm:px-12 lg:px-16 lg:py-14 z-10">
+      <div class="max-w-4xl">
+        <!-- Trust Badge -->
+        <div class="inline-flex items-center gap-3 px-4 py-2 bg-primary/5 border border-primary/10 text-primary text-sm font-bold font-serif tracking-wide uppercase mb-6 animate-fade-in-up">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+          </span>
+          {ratingLabel} {rating}
+        </div>
+
+        <!-- Heading -->
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground text-balance mb-6 font-serif leading-tight animate-fade-in-up delay-100">
+          {heading}
+        </h1>
+
+        <!-- Subheading -->
+        <p class="text-xl sm:text-2xl text-muted-foreground text-balance mb-8 max-w-2xl leading-relaxed animate-fade-in-up delay-200">
+          {subheading}
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-0 border border-primary w-full sm:w-fit animate-fade-in-up delay-300 shadow-sm">
+          <a
+            href={primaryCtaHref}
+            class="inline-flex items-center justify-center bg-primary px-10 py-4 text-lg font-semibold text-primary-foreground transition-all hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 w-full sm:w-auto"
+          >
+            {primaryCtaText}
+          </a>
+          <a
+            href={secondaryCtaHref}
+            class="inline-flex items-center justify-center bg-white px-10 py-4 text-lg font-semibold text-foreground transition-all hover:bg-muted hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border-t sm:border-t-0 sm:border-l border-primary w-full sm:w-auto"
+          >
+            {secondaryCtaText}
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="mt-10 pt-8 border-t border-border grid grid-cols-3 gap-10 animate-fade-in-up delay-500">
+          <div>
+            <p class="text-4xl font-bold text-primary font-serif">[X]</p>
+            <p class="text-sm font-medium text-muted-foreground mt-1 uppercase tracking-wide">[Stat 1]</p>
+          </div>
+          <div>
+            <p class="text-4xl font-bold text-primary font-serif">[X]+</p>
+            <p class="text-sm font-medium text-muted-foreground mt-1 uppercase tracking-wide">[Stat 2]</p>
+          </div>
+          <div>
+            <p class="text-4xl font-bold text-primary font-serif">[X]%</p>
+            <p class="text-sm font-medium text-muted-foreground mt-1 uppercase tracking-wide">[Stat 3]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visual Column (1/3) -->
+    <div class="relative lg:col-span-1 h-[500px] lg:h-auto w-full border-b lg:border-b-0 lg:border-l border-border bg-muted">
+      <img
+        src={imageSrc}
+        alt={imageAlt}
+        class="absolute inset-0 w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-700"
+      />
+      <div class="absolute inset-0 bg-primary/10 mix-blend-multiply pointer-events-none"></div>
+      
+      <!-- Social Proof Block -->
+      <div class="absolute bottom-0 left-0 right-0 bg-background/95 backdrop-blur-sm p-8 border-t border-primary">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="h-12 w-12 bg-primary flex items-center justify-center text-primary-foreground">
+            <Icon name="tabler:quote" class="h-6 w-6" />
+          </div>
+          <div>
+            <p class="font-bold text-foreground font-serif text-lg">Trusted by Families</p>
+            <div class="flex text-accent">
+               {[1, 2, 3, 4, 5].map(() => (
+                <Icon name="tabler:star" class="w-4 h-4 fill-current" />
+               ))}
+            </div>
+          </div>
+        </div>
+        <p class="text-muted-foreground text-sm italic leading-relaxed">
+          "[Client testimonial - what they loved about your service]"
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-500 { animation-delay: 500ms; }
+</style>

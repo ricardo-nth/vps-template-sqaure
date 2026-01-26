@@ -1,0 +1,50 @@
+---
+import SiteLayout from '@layouts/SiteLayout.astro';
+import PageHero from '@components/PageHero.astro';
+import WhyChooseUs from '@components/WhyChooseUs.astro';
+import CqcJourney from '@components/CqcJourney.astro';
+import ContactSection from '@components/ContactSection.astro';
+
+const metadata = {
+  title: 'Our Service Model - Healthcare',
+  description: 'Our ethos, values, care approach, and CQC registration process for Supported Living.',
+  schema: {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Our Service Model',
+    description: 'Care philosophy and quality commitment.'
+  }
+};
+---
+
+<SiteLayout metadata={metadata}>
+  <PageHero
+    heading="A Model Built on <span class='text-accent'>Trust & Excellence</span>"
+    subheading="Our service model is designed around the individual. We combine professional expertise with genuine compassion to create environments where people thrive."
+    primaryCtaText="Contact Us"
+    primaryCtaHref="/contact"
+    secondaryCtaText="Our Values"
+    secondaryCtaHref="#values"
+    imageSrc="https://images.unsplash.com/photo-1584466977773-270f5fcd5864?auto=format&fit=crop&w=2070&q=80"
+    imageAlt="Carer supporting a client"
+  />
+
+  <WhyChooseUs
+    eyebrow="Our Ethos"
+    heading="Why Families Choose Us"
+    intro="We don't just provide care; we build partnerships. Our model is founded on transparency, reliability, and an unwavering commitment to quality outcomes."
+    id="values"
+  />
+
+  <CqcJourney />
+
+  <ContactSection
+    heading="[Your Service Model CTA Heading]"
+    intro="[Your service model CTA description - invite visitors to discuss your approach]"
+    phoneLabel="[Your Phone]"
+    phoneHref="tel:[YourPhoneNumber]"
+    emailLabel="[email]@yourdomain.co.uk"
+    emailHref="mailto:[email]@yourdomain.co.uk"
+    address="[Your City, Region]"
+  />
+</SiteLayout>

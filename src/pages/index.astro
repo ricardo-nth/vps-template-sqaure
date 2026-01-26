@@ -1,0 +1,223 @@
+---
+/**
+ * index.astro - Homepage
+ *
+ * Demonstrates the full implementation of:
+ * - Two-tier layout system (TechnicalLayout → SiteLayout)
+ * - SEO optimization with meta tags and schema markup
+ * - Image optimization with Astro's Image component
+ * - Tailwind CSS styling
+ * - Performance best practices
+ */
+
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+// ============================================================================
+// ORIGINAL IMPORTS (Commented for easy revert)
+// ============================================================================
+// import { Image } from 'astro:assets';
+// import astroLogo from '../assets/astro.svg';
+// import background from '../assets/background.svg';
+
+// ============================================================================
+// HEALTHCARE IMPORTS (Active)
+// ============================================================================
+import Hero from '../components/Hero.astro';
+import ServicesOverview from '../components/ServicesOverview.astro';
+import AboutUs from '../components/AboutUs.astro';
+import WhyChooseUs from '../components/WhyChooseUs.astro';
+import TeamSection from '../components/TeamSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+
+// Page metadata - Update for your business
+const metadata = {
+  title: 'Home - [Business Name]',
+  description: '[Your business description - what services you provide and who you serve]',
+  schema: {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Home - [Business Name]',
+    description: '[Your business description - what services you provide and who you serve]',
+  },
+};
+---
+
+<SiteLayout metadata={metadata}>
+  <!-- ============================================================================
+       ORIGINAL HOMEPAGE CONTENT (Commented for easy revert)
+       ============================================================================
+       To revert to the original Dev Foundry Static homepage:
+       1. Uncomment the imports at the top (Image, astroLogo, background)
+       2. Uncomment this entire section
+       3. Comment out or remove the Healthcare sections below
+
+  <div class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <Image
+        src={background}
+        alt=""
+        class="w-full h-full object-cover blur-[100px]"
+        loading="eager"
+        fetchpriority="high"
+        widths={[400, 800, 1200, 1600]}
+        sizes="100vw"
+      />
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <div class="mb-8 flex justify-center">
+        <a
+          href="https://astro.build"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block transition-transform hover:scale-105 duration-200"
+        >
+          <Image
+            src={astroLogo}
+            alt="Astro Homepage"
+            width={115}
+            height={48}
+            loading="eager"
+            class="w-auto h-12"
+          />
+        </a>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+        Welcome to
+        <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          Dev Foundry Static
+        </span>
+      </h1>
+
+      <p class="text-xl sm:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        A high-performance, SEO-optimized Astro starter template built with Tailwind CSS v4
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-3xl mx-auto">
+        <div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-md">
+          <div class="text-3xl mb-2">⚡</div>
+          <h3 class="font-semibold text-gray-900 mb-2">Lightning Fast</h3>
+          <p class="text-sm text-gray-600">Optimized for Core Web Vitals and performance</p>
+        </div>
+        <div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-md">
+          <div class="text-3xl mb-2">🎯</div>
+          <h3 class="font-semibold text-gray-900 mb-2">SEO Ready</h3>
+          <p class="text-sm text-gray-600">Complete meta tags, schema markup, and sitemap</p>
+        </div>
+        <div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-md">
+          <div class="text-3xl mb-2">🎨</div>
+          <h3 class="font-semibold text-gray-900 mb-2">Tailwind v4</h3>
+          <p class="text-sm text-gray-600">Latest Tailwind CSS with modern styling</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a
+          href="https://docs.astro.build"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
+        >
+          Read the Docs
+          <Icon name="tabler:arrow-right" class="ml-2 w-5 h-5" />
+        </a>
+        <a
+          href="https://astro.build/chat"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center px-6 py-3 bg-white text-gray-900 font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105 border border-gray-200"
+        >
+          Join Discord
+          <Icon name="tabler:brand-discord" class="ml-2 w-5 h-5" />
+        </a>
+      </div>
+
+      <div class="mt-16 bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg max-w-2xl mx-auto text-left">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">🚀 Getting Started</h2>
+        <p class="text-gray-700 mb-4">
+          To get started, open the <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono text-blue-600">src/pages</code> directory in your project.
+        </p>
+        <div class="space-y-3 text-sm text-gray-600">
+          <div class="flex items-start">
+            <span class="text-green-600 mr-2">✓</span>
+            <span><strong>Two-tier layout system:</strong> TechnicalLayout handles SEO, SiteLayout handles presentation</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-green-600 mr-2">✓</span>
+            <span><strong>Image optimization:</strong> Using Astro's Image component with lazy loading</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-green-600 mr-2">✓</span>
+            <span><strong>SEO ready:</strong> Meta tags, Open Graph, Twitter Cards, and Schema.org markup</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-green-600 mr-2">✓</span>
+            <span><strong>Tailwind CSS v4:</strong> Latest version with modern utility classes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+       ============================================================================ -->
+
+  <!-- ============================================================================
+       HEALTHCARE HOMEPAGE CONTENT (Active)
+       ============================================================================ -->
+
+  <!-- Hero Section -->
+  <Hero />
+
+  <!-- Services Section -->
+  <ServicesOverview
+    eyebrow="Our Services"
+  />
+
+  <!-- About Us Section -->
+  <AboutUs
+    eyebrow="About Us"
+  />
+
+  <!-- Why Choose Us Section -->
+  <WhyChooseUs
+    eyebrow="Why Choose Us"
+    intro="[Your value proposition - why clients should choose your services over competitors]"
+    points={[
+      {
+        title: "[Differentiator 1]",
+        description: "[Description of your first key differentiator or benefit]",
+        iconName: "tabler:shield-check"
+      },
+      {
+        title: "[Differentiator 2]",
+        description: "[Description of your second key differentiator or benefit]",
+        iconName: "tabler:user-heart"
+      },
+      {
+        title: "[Differentiator 3]",
+        description: "[Description of your third key differentiator or benefit]",
+        iconName: "tabler:users-group"
+      },
+      {
+        title: "[Differentiator 4]",
+        description: "[Description of your fourth key differentiator or benefit]",
+        iconName: "tabler:certificate"
+      }
+    ]}
+  />
+
+  <!-- Team Section -->
+  <TeamSection
+    eyebrow="Our Team"
+    heading="[Your Team Heading]"
+    intro="[Brief description of your team and their dedication to clients]"
+  />
+
+  <!-- Contact Section -->
+  <ContactSection
+    phoneLabel="[Your Phone]"
+    phoneHref="tel:[YourPhoneNumber]"
+    address="[Your City, Region]"
+  />
+
+</SiteLayout>

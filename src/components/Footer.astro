@@ -1,0 +1,162 @@
+---
+import Icon from '@components/Icon.astro';
+import { Image } from 'astro:assets';
+import logo from '@assets/placeholder-logo.svg';
+
+interface FooterLink {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  brandName?: string;
+  tagline?: string;
+  address?: string;
+  phoneLabel?: string;
+  phoneHref?: string;
+  emailLabel?: string;
+  emailHref?: string;
+  navLinks?: FooterLink[];
+  legalLinks?: FooterLink[];
+  socialLinks?: { platform: string; href: string; icon: string }[];
+}
+
+const {
+  brandName = "[Business Name]",
+  tagline = "[Your tagline - what you do and your commitment to clients]",
+  address = "[Your City, Region]",
+  phoneLabel = "[Your Phone]",
+  phoneHref = "tel:[YourPhoneNumber]",
+  emailLabel = "[email]@yourdomain.co.uk",
+  emailHref = "mailto:[email]@yourdomain.co.uk",
+  navLinks = [
+    { label: "About", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Our Service Model", href: "/our-service-model" },
+    { label: "Contact", href: "/contact" },
+    { label: "Compliments & Complaints", href: "/contact#feedback" }
+  ],
+  legalLinks = [
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "/terms" },
+    { label: "Cookie Policy", href: "/cookies" },
+    { label: "Accessibility", href: "/accessibility" },
+  ],
+  socialLinks = [
+    { platform: "Facebook", href: "#", icon: "tabler:brand-facebook" },
+    { platform: "Twitter", href: "#", icon: "tabler:brand-x" },
+    { platform: "LinkedIn", href: "#", icon: "tabler:brand-linkedin" },
+    { platform: "Instagram", href: "#", icon: "tabler:brand-instagram" },
+  ],
+} = Astro.props as Props;
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-card border-t border-border">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+      <!-- Brand Column -->
+      <div class="lg:col-span-4 space-y-6">
+        <a href="/" class="flex items-center gap-3 group">
+          <Image
+            src={logo}
+            alt="[Business Name] Logo"
+            class="h-12 w-12 object-contain group-hover:scale-105 transition-transform duration-300"
+            loading="eager"
+          />
+          <span class="text-xl font-bold tracking-tight text-foreground font-serif">
+            {brandName}
+          </span>
+        </a>
+        <p class="text-muted-foreground leading-relaxed max-w-sm">
+          {tagline}
+        </p>
+        <div class="flex gap-4">
+          {socialLinks.map((social) => (
+            <a
+              href={social.href}
+              class="h-10 w-10 bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              aria-label={`Follow us on ${social.platform}`}
+            >
+              <Icon
+                name={social.icon}
+                size="20"
+                class="h-5 w-5"
+                aria-hidden={true}
+              />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="lg:col-span-2">
+        <h3 class="font-semibold text-foreground mb-6 font-serif">Quick Links</h3>
+        <ul class="space-y-4">
+          {navLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="text-muted-foreground hover:text-primary transition-colors"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="lg:col-span-3">
+        <h3 class="font-semibold text-foreground mb-6 font-serif">Contact Us</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3 text-muted-foreground">
+            <Icon name="tabler:map-pin" class="h-6 w-6 text-primary shrink-0" />
+            <span>{address}</span>
+          </li>
+          <li>
+            <a href={phoneHref} class="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+              <Icon name="tabler:phone" class="h-6 w-6 text-primary shrink-0" />
+              {phoneLabel}
+            </a>
+          </li>
+          <li>
+            <a href={emailHref} class="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+              <Icon name="tabler:mail" class="h-6 w-6 text-primary shrink-0" />
+              {emailLabel}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Head Office (Replaces Newsletter) -->
+      <div class="lg:col-span-3">
+        <h3 class="font-semibold text-foreground mb-6 font-serif">Head Office</h3>
+        <div class="bg-muted/30 p-6 border border-border/50">
+           <address class="not-italic text-muted-foreground space-y-2">
+            <p class="font-semibold text-foreground">{brandName}</p>
+            <p>Registered Office</p>
+            <p>{address}</p>
+           </address>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-muted-foreground">
+        &copy; {currentYear} {brandName}. All rights reserved.
+      </p>
+      <ul class="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
+        {legalLinks.map((link) => (
+          <li>
+            <a href={link.href} class="hover:text-foreground transition-colors">
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+  <defs>
+    <style>
+      .logo-primary { fill: #236d41; }
+      .logo-accent { fill: #fff188; }
+      .logo-highlight { fill: #ff6464; }
+    </style>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="90" cy="90" r="85" class="logo-primary"/>
+  
+  <!-- Inner circle -->
+  <circle cx="90" cy="90" r="70" class="logo-accent"/>
+  
+  <!-- Medical cross (larger for Apple touch icon) -->
+  <g transform="translate(90, 90)">
+    <!-- Vertical bar -->
+    <rect x="-8" y="-35" width="16" height="70" class="logo-primary"/>
+    <!-- Horizontal bar -->
+    <rect x="-35" y="-8" width="70" height="16" class="logo-primary"/>
+    
+    <!-- Center highlight -->
+    <circle cx="0" cy="0" r="8" class="logo-highlight"/>
+  </g>
+  
+  <!-- Decorative arc -->
+  <path d="M 65 45 Q 90 35 115 45" class="logo-primary" fill="none" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Business name placeholder -->
+  <text x="90" y="140" text-anchor="middle" class="logo-primary" font-family="Arial, sans-serif" font-size="16" font-weight="bold">CARE</text>
+</svg>

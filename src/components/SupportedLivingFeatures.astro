@@ -1,0 +1,85 @@
+---
+import Icon from './Icon.astro';
+
+interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  heading?: string;
+  subheading?: string;
+  features?: Feature[];
+}
+
+const {
+  heading = "Supported Living Done Right",
+  subheading = "Modern, compliant care that empowers independence while providing the safety net families trust.",
+  features = [
+    {
+      icon: "tabler:home",
+      title: "Independent Living",
+      description: "Private tenancies with personalized support - true independence with professional backup."
+    },
+    {
+      icon: "tabler:user-check",
+      title: "Personalized Plans",
+      description: "Individual care plans co-created with service users, families, and CQC best practices."
+    },
+    {
+      icon: "tabler:shield-check",
+      title: "CQC Outstanding",
+      description: "Proven regulatory excellence across all Key Lines of Enquiry (KLOEs)."
+    },
+    {
+      icon: "tabler:clock-24",
+      title: "24/7 Response",
+      description: "Round-the-clock support team ensuring peace of mind for service users and families."
+    },
+    {
+      icon: "tabler:heart-handshake",
+      title: "Dignified Care",
+      description: "Compassionate, person-centred approach respecting individual choices and dignity."
+    },
+    {
+      icon: "tabler:trending-up",
+      title: "Progress Tracking",
+      description: "Data-driven outcomes with regular reviews and continuous improvement."
+    }
+  ]
+} = Astro.props as Props;
+---
+
+<section class="bg-background py-24 lg:py-32" id="features">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-20 max-w-3xl mx-auto">
+      <p class="text-sm font-bold uppercase tracking-widest text-primary mb-3">Key Features</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance mb-6 font-serif">
+        {heading}
+      </h2>
+      <p class="text-xl text-muted-foreground leading-relaxed">
+        {subheading}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {features.map((feature, index) => (
+        <div class="group relative overflow-hidden bg-card p-10 border border-border hover:border-accent transition-all duration-300">
+          
+          <div class="relative flex flex-col items-start text-left h-full">
+            <div class="inline-flex h-16 w-16 items-center justify-center bg-primary/10 text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+              <Icon name={feature.icon} class="h-8 w-8" />
+            </div>
+            <h3 class="text-2xl font-bold text-foreground mb-4 font-serif group-hover:text-primary transition-colors">
+              {feature.title}
+            </h3>
+            <p class="text-muted-foreground leading-relaxed flex-1">
+              {feature.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

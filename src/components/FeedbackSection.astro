@@ -1,0 +1,69 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  heading?: string;
+  intro?: string;
+}
+
+const {
+  heading = "Compliments & Complaints",
+  intro = "We are committed to providing the highest quality of care. Your feedback helps us improve and ensures we maintain our high standards. We take all feedback seriously and have a transparent process for handling both compliments and complaints."
+} = Astro.props as Props;
+---
+
+<section class="py-24 bg-secondary/30" id="feedback">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary mb-8">
+      <Icon name="tabler:message-circle-2" class="w-8 h-8" />
+    </div>
+    
+    <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-6 font-serif">{heading}</h2>
+    <p class="text-lg text-muted-foreground mb-12 leading-relaxed">
+      {intro}
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {/* Compliments */}
+      <div class="bg-card border border-border p-8 text-left hover:shadow-lg hover:border-accent transition-all duration-300">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-10 h-10 bg-green-100 text-green-600 flex items-center justify-center">
+            <Icon name="tabler:thumb-up" class="w-5 h-5" />
+          </div>
+          <h3 class="text-xl font-bold text-foreground font-serif">Leave a Compliment</h3>
+        </div>
+        <p class="text-muted-foreground mb-6">
+          Has a member of our team gone above and beyond? We'd love to hear about it so we can recognize their dedication.
+        </p>
+        <a href="mailto:[feedback]@yourdomain.co.uk?subject=Compliment" class="text-primary font-semibold hover:underline inline-flex items-center gap-2">
+          Send Compliment
+          <Icon name="tabler:arrow-right" class="w-4 h-4" />
+        </a>
+      </div>
+
+      {/* Complaints */}
+      <div class="bg-card border border-border p-8 text-left hover:shadow-lg hover:border-accent transition-all duration-300">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-10 h-10 bg-red-100 text-red-600 flex items-center justify-center">
+            <Icon name="tabler:alert-circle" class="w-5 h-5" />
+          </div>
+          <h3 class="text-xl font-bold text-foreground font-serif">Raise a Concern</h3>
+        </div>
+        <p class="text-muted-foreground mb-6">
+          If you're not happy with any aspect of our service, please let us know. We have a formal complaints procedure to ensure fair resolution.
+        </p>
+        <a href="mailto:[feedback]@yourdomain.co.uk?subject=Complaint" class="text-primary font-semibold hover:underline inline-flex items-center gap-2">
+          File Complaint
+          <Icon name="tabler:arrow-right" class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-12 p-6 bg-background border border-border inline-block">
+      <p class="text-sm text-muted-foreground">
+        You can also contact the Care Quality Commission (CQC) directly if you have concerns about your care.
+        <a href="https://www.cqc.org.uk/contact-us" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline ml-1">Visit CQC Website</a>
+      </p>
+    </div>
+  </div>
+</section>

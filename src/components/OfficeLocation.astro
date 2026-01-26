@@ -1,0 +1,72 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  address?: string;
+  mapUrl?: string;
+  directionsUrl?: string;
+}
+
+const {
+  address = "[Your Full Address]",
+  // Update with your location's Google Maps embed URL
+  mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d639938.3840269688!2d-4.297642966281249!3d50.71599808226795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486c090316948303%3A0x40eb17a66e98810!2sDevon!5e0!3m2!1sen!2suk!4v1629890000000!5m2!1sen!2suk",
+  directionsUrl = "https://www.google.com/maps/dir//[Your+Address]"
+} = Astro.props as Props;
+---
+
+<section class="py-24 bg-background">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      
+      {/* Content */}
+      <div>
+        <div class="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary mb-6">
+          <span class="flex h-2 w-2 rounded-full bg-primary mr-2"></span>
+          Visit Us
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-6">Our Office</h2>
+        <p class="text-lg text-muted-foreground mb-8">
+          We welcome visits from families and commissioners. Please call ahead to schedule an appointment with our Registered Manager.
+        </p>
+        
+        <div class="flex items-start gap-4 mb-8">
+          <div class="w-12 h-12 rounded-xl bg-secondary text-secondary-foreground flex items-center justify-center shrink-0">
+            <Icon name="tabler:map-pin" class="w-6 h-6" />
+          </div>
+          <div>
+            <h3 class="font-bold text-foreground text-lg mb-1">Head Office</h3>
+            <p class="text-muted-foreground text-lg leading-relaxed max-w-xs">
+              {address}
+            </p>
+          </div>
+        </div>
+
+        <a 
+          href={directionsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform duration-200"
+        >
+          <Icon name="tabler:map-2" class="w-5 h-5" />
+          Get Directions
+        </a>
+      </div>
+
+      {/* Map */}
+      <div class="relative h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-border">
+        <iframe 
+          src={mapUrl}
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="absolute inset-0 w-full h-full grayscale hover:grayscale-0 transition-all duration-500"
+        ></iframe>
+      </div>
+
+    </div>
+  </div>
+</section>

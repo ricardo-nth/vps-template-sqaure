@@ -1,0 +1,114 @@
+---
+import Icon from './Icon.astro';
+
+interface Specialty {
+  title: string;
+  description: string;
+  icon: string;
+  imageSrc: string;
+  features: string[];
+}
+
+interface Props {
+  heading?: string;
+  subheading?: string;
+  specialties?: Specialty[];
+}
+
+const {
+  heading = "Specialized Care Pathways",
+  subheading = "We provide dedicated support streams tailored to specific needs, ensuring every individual receives the right expertise and environment to thrive.",
+  specialties = [
+    {
+      title: "Learning Disabilities",
+      description: "Empowering individuals to reach their full potential through personalized support, skill-building, and active community engagement.",
+      icon: "tabler:bulb",
+      imageSrc: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80",
+      features: ["Skill acquisition", "Community integration", "Personalized communication"]
+    },
+    {
+      title: "Autism & Neurodiversity",
+      description: "Structured, sensory-aware environments and communication support tailored to neurodiverse needs, reducing anxiety and promoting confidence.",
+      icon: "tabler:puzzle",
+      imageSrc: "https://images.unsplash.com/photo-1606092195730-5d7b9af1ef4d?auto=format&fit=crop&w=800&q=80",
+      features: ["Sensory-friendly spaces", "Routine support", "Specialist staff training"]
+    },
+    {
+      title: "Mental Health Support",
+      description: "Recovery-focused support promoting emotional wellbeing, resilience, and community connection for those with enduring mental health needs.",
+      icon: "tabler:brain",
+      imageSrc: "https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?auto=format&fit=crop&w=800&q=80",
+      features: ["Recovery model", "Crisis prevention", "Emotional resilience"]
+    },
+    {
+      title: "Physical Disabilities",
+      description: "Accessible housing and adaptive support enabling independence and active participation in daily life and the wider community.",
+      icon: "tabler:wheelchair",
+      imageSrc: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=80",
+      features: ["Accessible environments", "Adaptive technology", "Mobility support"]
+    },
+    {
+      title: "Older Adults",
+      description: "Dignified support for changing needs, maintaining independence, social connection, and quality of life in later years.",
+      icon: "tabler:cane",
+      imageSrc: "https://images.unsplash.com/photo-1576765611791-374770ac4db8?auto=format&fit=crop&w=800&q=80",
+      features: ["Companionship", "Health monitoring", "Active ageing"]
+    },
+    {
+      title: "Transitional Support",
+      description: "Guiding young adults from care, college, or family homes into independent adult life with confidence and practical skill development.",
+      icon: "tabler:walk",
+      imageSrc: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80",
+      features: ["Life skills training", "Education support", "Tenancy management"]
+    }
+  ]
+} = Astro.props as Props;
+---
+
+<section class="py-24 bg-background" id="specialties">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <p class="text-sm font-bold uppercase tracking-widest text-primary mb-3">Specialized Support</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance mb-6 font-serif">{heading}</h2>
+      <p class="text-lg text-muted-foreground">{subheading}</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {specialties.map((specialty) => (
+        <div class="group bg-card border border-border hover:border-accent transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
+          <div class="relative h-48 overflow-hidden border-b border-border">
+            <div class="absolute inset-0 bg-primary/20 mix-blend-multiply z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+            <img 
+              src={specialty.imageSrc} 
+              alt={specialty.title}
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0"
+            />
+            <div class="absolute bottom-0 left-0 z-20 bg-card p-3 border-t border-r border-border">
+              <Icon name={specialty.icon} class="w-6 h-6 text-primary" />
+            </div>
+          </div>
+          
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-bold text-foreground mb-3 font-serif group-hover:text-primary transition-colors">
+              {specialty.title}
+            </h3>
+            <p class="text-muted-foreground mb-6 flex-1">
+              {specialty.description}
+            </p>
+            
+            <div class="border-t border-border pt-4 mt-auto">
+              <ul class="space-y-2">
+                {specialty.features.map((feature) => (
+                  <li class="flex items-center text-sm text-muted-foreground">
+                    <Icon name="tabler:check" class="w-4 h-4 text-primary mr-2 shrink-0" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
