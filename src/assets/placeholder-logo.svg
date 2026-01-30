@@ -1,85 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 1300">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
   <defs>
     <style>
-      .cls-1 {
-        fill: #fff188;
-      }
-
-      .cls-2 {
-        font-size: 180px;
-      }
-
-      .cls-2, .cls-3, .cls-4 {
-        fill: #236d41;
-      }
-
-      .cls-2, .cls-4 {
-        font-family: MontserratRoman-Bold, Montserrat;
-        font-variation-settings: 'wght' 700;
-        font-weight: 700;
-      }
-
-      .cls-5 {
-        fill: #ff6464;
-      }
-
-      .cls-4 {
-        font-size: 96.18px;
-      }
+      .logo-bg { fill: #059669; }
+      .logo-text { fill: #ffffff; font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 120px; }
     </style>
   </defs>
-  <g id="Layer_2-2" data-name="Layer_2">
-    <circle class="cls-3" cx="650" cy="650" r="650"/>
-  </g>
-  <g id="Layer_2_copy">
-    <circle class="cls-1" cx="650" cy="650" r="607.37"/>
-  </g>
-  <g id="Layer_2_copy_2">
-    <circle class="cls-3" cx="650" cy="650" r="402.94"/>
-    <path class="cls-5" d="M556.13,463.97c33.57-5.72,67.92,4.09,93.4,26.68l.69.62.64-.56c24.29-21.31,56.58-31.14,88.62-26.96l4.61.67c61.14,10.56,102.15,68.68,91.59,129.82-3.72,21.57-13.67,41.58-28.6,57.57l-3.37,3.46-.9.77-139.49,138.16c-6.66,6.59-17.16,7.24-24.58,1.54l-1.76-1.54-140.3-138.97c-44.47-43.27-45.44-114.39-2.17-158.86,16.6-17.06,38.18-28.4,61.64-32.4Z"/>
-  </g>
-  <g id="Layer_5">
-    <circle class="cls-3" cx="144.81" cy="650" r="50"/>
-    <circle class="cls-3" cx="1155.67" cy="650" r="50"/>
-  </g>
-  <g id="Layer_6">
-    <text class="cls-2" transform="translate(299.71 375.88) rotate(-43.44)"><tspan x="0" y="0">C</tspan></text>
-    <text class="cls-2" transform="translate(387.98 288.54) rotate(-26.18)"><tspan x="0" y="0">O</tspan></text>
-    <text class="cls-2" transform="translate(517.88 226.61) rotate(-10.06)"><tspan x="0" y="0">T</tspan></text>
-    <text class="cls-2" transform="translate(621.95 209.64) rotate(.93)"><tspan x="0" y="0">I</tspan></text>
-    <text class="cls-2" transform="translate(676.43 207.54) rotate(10.4)"><tspan x="0" y="0">L</tspan></text>
-    <text class="cls-2" transform="translate(777.03 222.18) rotate(26.17)"><tspan x="0" y="0">D</tspan></text>
-    <text class="cls-2" transform="translate(901.02 282.23) rotate(43.23)"><tspan x="0" y="0">A</tspan></text>
-    <text class="cls-4" transform="translate(162.21 873.73) rotate(61.16)"><tspan x="0" y="0">H</tspan></text>
-    <text class="cls-4" transform="translate(203.36 947.58) rotate(51.95)"><tspan x="0" y="0">O</tspan></text>
-    <text class="cls-4" transform="translate(258.15 1017.27) rotate(41.97)"><tspan x="0" y="0">M</tspan></text>
-    <text class="cls-4" transform="translate(332.43 1081.93) rotate(32.93)"><tspan x="0" y="0">E</tspan></text>
-    <text class="cls-4" transform="translate(390.38 1118.21) rotate(27.6)"><tspan x="0" y="0"> </tspan></text>
-    <text class="cls-4" transform="translate(417.84 1133.55) rotate(21.9)"><tspan x="0" y="0">C</tspan></text>
-    <text class="cls-4" transform="translate(489.16 1161.85) rotate(13.46)"><tspan x="0" y="0">A</tspan></text>
-    <text class="cls-4" transform="translate(566.97 1179.88) rotate(5.06)"><tspan x="0" y="0">R</tspan></text>
-    <text class="cls-4" transform="translate(643.11 1186.02) rotate(-2.67)"><tspan x="0" y="0">E</tspan></text>
-    <text class="cls-4" transform="translate(711.36 1181.8) rotate(-7.97)"><tspan x="0" y="0"> </tspan></text>
-    <text class="cls-4" transform="translate(742.16 1178.1) rotate(-13.13)"><tspan x="0" y="0">S</tspan></text>
-    <text class="cls-4" transform="translate(807.14 1162.69) rotate(-20.5)"><tspan x="0" y="0">E</tspan></text>
-    <text class="cls-4" transform="translate(872.99 1137.86) rotate(-28.39)"><tspan x="0" y="0">R</tspan></text>
-    <text class="cls-4" transform="translate(940.33 1101) rotate(-36.65)"><tspan x="0" y="0">V</tspan></text>
-    <text class="cls-4" transform="translate(1000.59 1054.57) rotate(-42.61)"><tspan x="0" y="0">I</tspan></text>
-    <text class="cls-4" transform="translate(1027.54 1030.83) rotate(-48.5)"><tspan x="0" y="0">C</tspan></text>
-    <text class="cls-4" transform="translate(1077.61 973.35) rotate(-56.3)"><tspan x="0" y="0">E</tspan></text>
-    <text class="cls-4" transform="translate(1116.04 914.94) rotate(-63.62)"><tspan x="0" y="0">S</tspan></text>
-    <g>
-      <g>
-        <path class="cls-1" d="M673.87,1058.01c-20.28-108.46,48-226.62,152.1-263.2,14.57-5.12,23.69-19.16,32.44-31.88,8.75-12.72,19.83-25.98,35.15-27.93,15.31-1.95,31.82,15.96,22.9,28.56-33.27,46.99-72.51,89.76-116.48,126.94,110.03-52.04,184.49-171.66,182.6-293.36-.16-10.61,9.18-20.46,19.78-20.86,10.61-.4,20.66,8.72,21.3,19.32,9.15,152.87-74.07,307.66-206.64,384.34-26.23,15.17-40.03,49.02-31.89,78.21"/>
-        <path class="cls-1" d="M893.89,721.76c7.9-3.28,18.02.5,21.14,8.42,4.33-22.87,8.66-45.73,12.49-69.63-20.07,11.77-32.97,34.85-33.63,61.21Z"/>
-        <path class="cls-1" d="M925.24,767.46c5.66-10.27,3.49-24.24-4.78-31.73,6.52-30.07,13.05-60.14,19.57-90.21,2.95-13.6,13.98-25.12,27.44-28.65-.17,1.02-.34,2.04-1.56,3.33-5.89,49.4-17.74,98.09-40.67,147.26Z"/>
-      </g>
-      <g>
-        <path class="cls-1" d="M626.13,1058.01c20.28-108.46-48-226.62-152.1-263.2-14.57-5.12-23.69-19.16-32.44-31.88-8.75-12.72-19.83-25.98-35.15-27.93-15.31-1.95-31.82,15.96-22.9,28.56,33.27,46.99,72.51,89.76,116.48,126.94-110.03-52.04-184.49-171.66-182.6-293.36.16-10.61-9.18-20.46-19.78-20.86-10.61-.4-20.66,8.72-21.3,19.32-9.15,152.87,74.07,307.66,206.64,384.34,26.23,15.17,40.03,49.02,31.89,78.21"/>
-        <path class="cls-1" d="M406.11,721.76c-7.9-3.28-18.02.5-21.14,8.42-4.33-22.87-8.66-45.73-12.49-69.63,20.07,11.77,32.97,34.85,33.63,61.21Z"/>
-        <path class="cls-1" d="M374.76,767.46c-5.66-10.27-3.49-24.24,4.78-31.73-6.52-30.07-13.05-60.14-19.57-90.21-2.95-13.6-13.98-25.12-27.44-28.65.17,1.02.34,2.04,1.56,3.33,5.89,49.4,17.74,98.09,40.67,147.26Z"/>
-      </g>
-    </g>
-  </g>
+  <rect class="logo-bg" width="200" height="200" rx="20"/>
+  <text class="logo-text" x="50%" y="50%" dominant-baseline="central" text-anchor="middle">C</text>
 </svg>
