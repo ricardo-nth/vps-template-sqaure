@@ -1,38 +1,81 @@
-# Sqaure - Healthcare Website Template
+# Square Healthcare Template
 
-An angular, bold, and geometric Astro.js template designed for healthcare and care agencies.
+A geometric, structured Astro.js template for healthcare agencies with strong lines and professional feel.
+
+🔗 **Live Demo:** https://vps-template-square.vercel.app
+
+## Features
+
+- Astro 5.x
+- Tailwind CSS v4
+- TypeScript
+- SEO ready
+- Professional, structured design system
 
 ## Quick Start
 
-1. Click "Use This Template" on GitHub
-2. Clone your new repository
-3. Run `pnpm install`
-4. Update `src/config/site.ts` with your business details
-5. Replace placeholder content in pages and components
-6. Run `pnpm dev` to preview
+1. Click **Use this template** on GitHub.
+2. Clone your new repository.
+3. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+4. Start the dev server:
+
+   ```bash
+   pnpm dev
+   ```
+
+5. Open the local URL shown in the terminal and begin editing content.
 
 ## Customization Checklist
 
-- [ ] Update site.ts with your business name and description
-- [ ] Replace [Business Name] placeholders throughout
-- [ ] Add your contact details
-- [ ] Update services and about content
-- [ ] Add real testimonials
-- [ ] Replace placeholder images with your own
-- [ ] Update favicon and logo
+- [ ] Update `src/config/site.ts`
+- [ ] Replace `[Business Name]` placeholders
+- [ ] Add contact details
+- [ ] Update services and care model
+- [ ] Customize the CQC journey
+- [ ] Replace images with your own
+- [ ] Update the logo
 
-## Need Help?
+## Service Detail Pages
 
-**Want this template professionally customized for your business?**
+The template includes a detailed service page example with a full CQC journey:
 
-Visit [vertexplatformsolutions.com/offers/healthcare-agencies](https://vertexplatformsolutions.com/offers/healthcare-agencies) to get your website built and hosted - you just provide content, we handle everything else.
+- `src/pages/services/complex-care`
+
+## Project Structure
+
+```text
+src/
+  components/    Reusable UI components
+  config/        Site configuration
+  layouts/       Layout wrappers
+  pages/         Route-based pages
+  styles/        Global styles
+public/          Static assets
+```
+
+## Available Scripts
+
+- `pnpm dev` — Start the development server
+- `pnpm build` — Build for production
+- `pnpm preview` — Preview the production build
+
+## Need Professional Help?
+
+Get this template professionally customized for your agency:
+
+https://vertexplatformsolutions.com/offers/healthcare-agencies
 
 ## Tech Stack
 
-- Astro.js 5.x
+- Astro 5.x
 - Tailwind CSS v4
 - TypeScript
 
 ## License
 
-MIT - Use freely for personal or commercial projects.
+MIT
