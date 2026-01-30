@@ -4,9 +4,10 @@ import PageHero from '@components/PageHero.astro';
 import WhyChooseUs from '@components/WhyChooseUs.astro';
 import CqcJourney from '@components/CqcJourney.astro';
 import ContactSection from '@components/ContactSection.astro';
+import { siteConfig } from '@/config/site';
 
 const metadata = {
-  title: 'Our Service Model - Healthcare',
+  title: `Our Service Model - ${siteConfig.name}`,
   description: 'Our ethos, values, care approach, and CQC registration process for Supported Living.',
   schema: {
     '@context': 'https://schema.org',

@@ -1,0 +1,76 @@
+---
+import SiteLayout from '@layouts/SiteLayout.astro';
+import PageHero from '@components/PageHero.astro';
+import WhyChooseUs from '@components/WhyChooseUs.astro';
+import CqcJourney from '@components/CqcJourney.astro';
+import ContactSection from '@components/ContactSection.astro';
+import { siteConfig } from '@/config/site';
+
+const metadata = {
+  title: `Complex Care Services - ${siteConfig.name}`,
+  description: 'Specialist, nurse-led complex care designed for individuals with higher clinical needs, delivered with compassion, safety, and continuity.',
+  schema: {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Complex Care Services',
+    description: 'Specialist complex care with individualized plans, clinical oversight, and coordinated support for higher-needs clients.',
+    serviceType: 'Complex Care',
+    provider: {
+      '@type': 'Organization',
+      name: siteConfig.name
+    },
+    areaServed: '[Your Service Area]'
+  }
+};
+---
+
+<SiteLayout metadata={metadata}>
+  <PageHero
+    heading="Complex Care Services"
+    subheading="Compassionate, clinically informed support for individuals with complex health needs. We deliver tailored care plans, consistent staffing, and coordinated clinical oversight to help clients live safely and confidently."
+    primaryCtaText="Speak to Our Team"
+    primaryCtaHref="/contact"
+    secondaryCtaText="Our Care Standards"
+    secondaryCtaHref="#quality"
+    imageAlt="Complex care support team"
+  />
+
+  <WhyChooseUs
+    eyebrow="Complex Care"
+    heading="Specialist support built around the individual"
+    intro="We combine clinical expertise with person-centred care to deliver safe, reliable complex care that adapts to changing needs and priorities."
+    points={[
+      {
+        title: 'Nurse-led care planning',
+        description: 'Personalized care plans shaped by clinical assessments, risk management, and ongoing reviews.',
+        iconName: 'tabler:stethoscope'
+      },
+      {
+        title: 'Continuity of care',
+        description: 'Consistent staffing and clear handovers to build trust, stability, and better outcomes.',
+        iconName: 'tabler:users-group'
+      },
+      {
+        title: '24/7 responsive support',
+        description: 'Rapid escalation pathways and round-the-clock availability for complex needs.',
+        iconName: 'tabler:clock-hour-4'
+      },
+      {
+        title: 'Quality & safety focus',
+        description: 'Robust governance, medication management, and compliance-driven care delivery.',
+        iconName: 'tabler:shield-check'
+      }
+    ]}
+    id="quality"
+  />
+
+  <CqcJourney
+    heading="Quality assurance you can trust"
+    subheading="Transparent, accountable processes that demonstrate our commitment to safe, compliant complex care."
+  />
+
+  <ContactSection
+    heading="Discuss complex care support"
+    intro="Tell us about your needs and we’ll guide you through the next steps, from assessment to tailored care planning."
+  />
+</SiteLayout>
