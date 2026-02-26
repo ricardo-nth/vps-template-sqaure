@@ -1,11 +1,14 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import { Icon } from 'astro-icon/components';
+import teamPortrait from '@assets/images/team-portrait.jpg';
 
 interface TeamMember {
   name: string;
   role: string;
   description: string;
-  image: string;
+  image: ImageMetadata;
   imageAlt?: string;
   credentials?: string;
 }
@@ -27,7 +30,7 @@ const {
       role: "[Role/Title]",
       credentials: "[Qualifications]",
       description: "[Brief bio - their experience and what they bring to the team]",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80",
+      image: teamPortrait,
       imageAlt: "[Team member 1 photo description]",
     },
     {
@@ -35,7 +38,7 @@ const {
       role: "[Role/Title]",
       credentials: "[Qualifications]",
       description: "[Brief bio - their experience and what they bring to the team]",
-      image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80",
+      image: teamPortrait,
       imageAlt: "[Team member 2 photo description]",
     },
     {
@@ -43,7 +46,7 @@ const {
       role: "[Role/Title]",
       credentials: "[Qualifications]",
       description: "[Brief bio - their experience and what they bring to the team]",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+      image: teamPortrait,
       imageAlt: "[Team member 3 photo description]",
     },
   ],
@@ -71,10 +74,11 @@ const {
         <div class="group relative bg-card border border-accent/30 hover:border-accent transition-colors duration-300 flex flex-col h-full">
           <!-- Image Container -->
           <div class="relative aspect-[4/5] overflow-hidden bg-muted border-b border-accent/30">
-            <img
+            <Image
               src={member.image}
               alt={member.imageAlt || member.name}
               class="h-full w-full object-cover transition-all duration-700 filter grayscale group-hover:grayscale-0 group-hover:scale-105"
+              loading="lazy"
             />
             
             <!-- Green Overlay -->

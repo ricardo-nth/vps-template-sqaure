@@ -1,5 +1,8 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import Icon from "./Icon.astro";
+import featuredSection from '@assets/images/featured-section.jpg';
 
 interface Point {
   title: string;
@@ -12,7 +15,7 @@ interface Props {
   heading?: string;
   intro?: string;
   points?: Point[];
-  imageSrc?: string;
+  imageSrc?: ImageMetadata;
   imageAlt?: string;
   ctaText?: string;
   ctaHref?: string;
@@ -27,7 +30,7 @@ const {
 
   intro = "We believe that exceptional care goes beyond just meeting medical needs. It's about building relationships, fostering independence, and treating every individual with the utmost respect.",
 
-  imageSrc = "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2070&q=80",
+  imageSrc = featuredSection,
 
   imageAlt = "Peaceful landscape with rolling hills",
 
@@ -96,10 +99,11 @@ const {
           class="absolute inset-0 w-full h-full"
           style="clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);"
         >
-          <img
+          <Image
             src={imageSrc}
             alt={imageAlt}
             class="w-full h-full object-cover opacity-80"
+            loading="lazy"
           />
 
           <div

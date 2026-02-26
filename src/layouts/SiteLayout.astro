@@ -24,6 +24,7 @@
 import TechnicalLayout from './TechnicalLayout.astro';
 import { SEO } from 'astro-seo';
 import { Schema } from 'astro-seo-schema';
+import type { Thing } from 'schema-dts';
 
 // ============================================================================
 // COMPONENT IMPORTS
@@ -38,7 +39,7 @@ interface Props {
     title: string;
     description?: string;
     index?: boolean; // Default: true (index, follow) | false (noindex, nofollow)
-    schema?: any; // Optional page-specific schema
+    schema?: Thing; // Optional page-specific schema
   };
 
   // Layout-specific Props
@@ -83,7 +84,7 @@ const schemaProps = metadata?.schema;
 
   <!-- Render Schema component if schemaProps provided -->
   {schemaProps && (
-    <Schema slot="schema" item={schemaProps as any} />
+    <Schema slot="schema" item={schemaProps} />
   )}
 
   <!-- Page Structure -->

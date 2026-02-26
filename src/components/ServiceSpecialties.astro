@@ -1,11 +1,19 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import Icon from './Icon.astro';
+import teamPortrait from '@assets/images/team-portrait.jpg';
+import careFacility from '@assets/images/care-facility.jpg';
+import wellbeingSupport from '@assets/images/wellbeing-support.jpg';
+import serviceGeneral from '@assets/images/service-general.jpg';
+import residentialCare from '@assets/images/residential-care.jpg';
+import featuredSection from '@assets/images/featured-section.jpg';
 
 interface Specialty {
   title: string;
   description: string;
   icon: string;
-  imageSrc: string;
+  imageSrc: ImageMetadata;
   features: string[];
 }
 
@@ -23,42 +31,42 @@ const {
       title: "Learning Disabilities",
       description: "Empowering individuals to reach their full potential through personalized support, skill-building, and active community engagement.",
       icon: "tabler:bulb",
-      imageSrc: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80",
+      imageSrc: teamPortrait,
       features: ["Skill acquisition", "Community integration", "Personalized communication"]
     },
     {
       title: "Autism & Neurodiversity",
       description: "Structured, sensory-aware environments and communication support tailored to neurodiverse needs, reducing anxiety and promoting confidence.",
       icon: "tabler:puzzle",
-      imageSrc: "https://images.unsplash.com/photo-1606092195730-5d7b9af1ef4d?auto=format&fit=crop&w=800&q=80",
+      imageSrc: careFacility,
       features: ["Sensory-friendly spaces", "Routine support", "Specialist staff training"]
     },
     {
       title: "Mental Health Support",
       description: "Recovery-focused support promoting emotional wellbeing, resilience, and community connection for those with enduring mental health needs.",
       icon: "tabler:brain",
-      imageSrc: "https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?auto=format&fit=crop&w=800&q=80",
+      imageSrc: wellbeingSupport,
       features: ["Recovery model", "Crisis prevention", "Emotional resilience"]
     },
     {
       title: "Physical Disabilities",
       description: "Accessible housing and adaptive support enabling independence and active participation in daily life and the wider community.",
       icon: "tabler:wheelchair",
-      imageSrc: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=80",
+      imageSrc: serviceGeneral,
       features: ["Accessible environments", "Adaptive technology", "Mobility support"]
     },
     {
       title: "Older Adults",
       description: "Dignified support for changing needs, maintaining independence, social connection, and quality of life in later years.",
       icon: "tabler:cane",
-      imageSrc: "https://images.unsplash.com/photo-1576765611791-374770ac4db8?auto=format&fit=crop&w=800&q=80",
+      imageSrc: residentialCare,
       features: ["Companionship", "Health monitoring", "Active ageing"]
     },
     {
       title: "Transitional Support",
       description: "Guiding young adults from care, college, or family homes into independent adult life with confidence and practical skill development.",
       icon: "tabler:walk",
-      imageSrc: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80",
+      imageSrc: featuredSection,
       features: ["Life skills training", "Education support", "Tenancy management"]
     }
   ]
@@ -78,10 +86,11 @@ const {
         <div class="group bg-card border border-border hover:border-accent transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
           <div class="relative h-48 overflow-hidden border-b border-border">
             <div class="absolute inset-0 bg-primary/20 mix-blend-multiply z-10 group-hover:bg-transparent transition-colors duration-500"></div>
-            <img 
-              src={specialty.imageSrc} 
+            <Image
+              src={specialty.imageSrc}
               alt={specialty.title}
               class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0"
+              loading="lazy"
             />
             <div class="absolute bottom-0 left-0 z-20 bg-card p-3 border-t border-r border-border">
               <Icon name={specialty.icon} class="w-6 h-6 text-primary" />
