@@ -1,5 +1,8 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import Icon from './Icon.astro';
+import heroBg from '@assets/images/hero-bg.jpg';
 
 interface Props {
   heading: string;
@@ -8,7 +11,7 @@ interface Props {
   primaryCtaHref?: string;
   secondaryCtaText?: string;
   secondaryCtaHref?: string;
-  imageSrc?: string;
+  imageSrc?: ImageMetadata;
   imageAlt?: string;
   socialProofTitle?: string;
   socialProofSubtitle?: string;
@@ -22,7 +25,7 @@ const {
   primaryCtaHref = "/contact",
   secondaryCtaText,
   secondaryCtaHref,
-  imageSrc = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+  imageSrc = heroBg,
   imageAlt = "Healthcare professional",
   socialProofTitle = "Verified Excellence",
   socialProofSubtitle = "Top-rated care provider",
@@ -61,10 +64,11 @@ const {
         ) : (
           <>
             <div class="absolute inset-0 h-5/6 m-auto bg-accent/10 border border-accent/30 -z-10 translate-x-4 translate-y-4"></div>
-            <img
+            <Image
               src={imageSrc}
               alt={imageAlt}
               class="relative h-5/6 w-full object-cover border border-border"
+              loading="eager"
             />
             
             {/* Floating Card (Blocky) */}

@@ -7,6 +7,7 @@ import ServiceSpecialties from '@components/ServiceSpecialties.astro';
 import CompliancePillars from '@components/CompliancePillars.astro';
 import CareDeliveryProcess from '@components/CareDeliveryProcess.astro';
 import ContactSection from '@components/ContactSection.astro';
+import heroBg from '@assets/images/hero-bg.jpg';
 
 const metadata = {
   title: `Services - ${siteConfig.name}`,
@@ -60,7 +61,7 @@ const metadata = {
     primaryCtaHref="/contact"
     secondaryCtaText="Explore Services"
     secondaryCtaHref="#features"
-    imageSrc="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    imageSrc={heroBg}
     imageAlt="CQC Compliant Services"
   />
 
