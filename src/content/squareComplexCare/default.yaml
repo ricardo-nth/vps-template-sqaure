@@ -27,6 +27,49 @@ hero:
   secondaryCtaHref: '#quality'
   imageKey: hero-bg
   imageAlt: Complex care support team
+outcomesSnapshot:
+  heading: Complex Care Outcomes Snapshot
+  intro: Key delivery metrics designed for commissioner and family confidence.
+  stats:
+    - value: 96%
+      label: Family Satisfaction
+      detail: Confidence in communication, reliability, and care quality.
+    - value: 94%
+      label: Care Plan Stability
+      detail: Packages maintained without unplanned breakdowns over 12 months.
+    - value: 100%
+      label: Mandatory Competency Compliance
+      detail: Active complex-care staff current with core clinical competencies.
+serviceFit:
+  badgeLabel: Service Fit
+  heading: Who This Complex Care Service Is Best For
+  intro: This model is designed for referrals that need coordinated clinical oversight with person-centred daily support.
+  suitableForTitle: Usually a Strong Fit For
+  suitableFor:
+    - Adults with higher support needs requiring coordinated multi-disciplinary input.
+    - Families and professionals seeking stable staffing with clear escalation protocols.
+    - Referrals that need measurable outcomes and governance-led review cycles.
+  alternativeSupportTitle: Better Directed Elsewhere When
+  alternativeSupport:
+    - The primary requirement is short-term acute medical intervention.
+    - The referral has no ongoing support coordination requirement after discharge.
+    - Independent low-support domiciliary visits are sufficient without clinical oversight.
+firstThirtyDays:
+  heading: What the First 30 Days Looks Like
+  intro: Mobilisation prioritises risk control, continuity, and early outcome visibility.
+  milestones:
+    - dayRange: Days 1-7
+      title: Clinical and Risk Baseline
+      description: Confirm health priorities, risk profile, and immediate safety controls with stakeholders.
+      icon: tabler:heartbeat
+    - dayRange: Days 8-14
+      title: Team Alignment and Plan Activation
+      description: Activate the care plan, confirm staffing continuity, and lock communication pathways.
+      icon: tabler:users-group
+    - dayRange: Days 15-30
+      title: Outcome Review and Adjustment
+      description: Review delivery quality, update interventions, and agree month-two priorities.
+      icon: tabler:chart-line
 whyChooseUs:
   eyebrow: Complex Care
   heading: Specialist support built around the individual
@@ -65,6 +108,18 @@ cqcJourney:
     - title: Outcome Measurement
       description: Systematic tracking of clinical outcomes and quality indicators for continuous improvement.
       status: upcoming
+faqSection:
+  heading: Complex Care Referral FAQs
+  intro: Practical guidance for referral teams, case managers, and families.
+  items:
+    - question: How quickly can a complex care package start?
+      answer: Start timing depends on clinical complexity and risk profile, but urgent referrals are triaged quickly with mobilisation milestones and clear ownership.
+    - question: How do you coordinate with healthcare professionals?
+      answer: We maintain structured communication with GPs, nursing teams, and specialists, with documented updates linked to care plan reviews.
+    - question: Can support intensity change over time?
+      answer: Yes. Packages are reviewed regularly and adjusted based on outcomes, clinical advice, and evolving personal goals.
+    - question: How is quality monitored after onboarding?
+      answer: We use supervision, audit cycles, incident learning, and formal review checkpoints to maintain safe, consistent delivery.
 contactSection:
   heading: Discuss complex care support
   intro: Tell us about your needs and we'll guide you through the next steps, from assessment to tailored care planning.

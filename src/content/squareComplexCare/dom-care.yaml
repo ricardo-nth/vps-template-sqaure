@@ -27,6 +27,49 @@ hero:
   secondaryCtaHref: '#quality'
   imageKey: hero-bg
   imageAlt: Complex home care team
+outcomesSnapshot:
+  heading: Complex Home Care Outcomes Snapshot
+  intro: Operational indicators demonstrating safe, consistent domiciliary complex care.
+  stats:
+    - value: 97%
+      label: Scheduled Visit Reliability
+      detail: Home visits delivered as planned across active packages.
+    - value: 95%
+      label: Continuity of Primary Carers
+      detail: Service users supported by familiar care teams.
+    - value: 24/7
+      label: Escalation Coverage
+      detail: Active packages supported by round-the-clock urgent response pathways.
+serviceFit:
+  badgeLabel: Service Fit
+  heading: Who This Complex Home Care Service Is Best For
+  intro: This service is strongest where clinical needs are higher but care is best delivered at home with coordinated oversight.
+  suitableForTitle: Usually a Strong Fit For
+  suitableFor:
+    - Adults requiring medication, mobility, or complex routine support at home.
+    - Families needing dependable communication and continuity-led home visits.
+    - Discharge pathways where readmission risk needs close monitoring and structured review.
+  alternativeSupportTitle: Better Directed Elsewhere When
+  alternativeSupport:
+    - Residential or inpatient settings are required as the safest primary environment.
+    - There is no sustained home-care requirement after immediate post-discharge needs.
+    - Clinical complexity is low and standard domiciliary visits are sufficient.
+firstThirtyDays:
+  heading: What the First 30 Days Looks Like
+  intro: Implementation focuses on safe mobilisation, routine consistency, and measurable home-care outcomes.
+  milestones:
+    - dayRange: Days 1-7
+      title: Home Clinical Baseline and Safety Setup
+      description: Confirm medication protocols, risk controls, and emergency escalation contacts for the package.
+      icon: tabler:home-heart
+    - dayRange: Days 8-14
+      title: Continuity Roster and Daily Routine Stabilisation
+      description: Lock visit windows, assign core carers, and align communication routines with family and professionals.
+      icon: tabler:calendar-check
+    - dayRange: Days 15-30
+      title: Quality Review and Plan Optimisation
+      description: Review delivery reliability and outcomes, then refine visit structure and goals for month two.
+      icon: tabler:chart-bar
 whyChooseUs:
   eyebrow: Complex Home Care
   heading: Clinical expertise delivered at home
@@ -65,6 +108,18 @@ cqcJourney:
     - title: Outcome Tracking
       description: Regular quality audits and outcome measurement for continuous improvement.
       status: upcoming
+faqSection:
+  heading: Complex Home Care Referral FAQs
+  intro: Practical answers for discharge teams, case managers, and families.
+  items:
+    - question: Can complex home care start directly after discharge?
+      answer: Yes, where clinical information and risk controls are in place. We coordinate mobilisation quickly with clear ownership and start-date visibility.
+    - question: How do you manage medication and clinical tasks?
+      answer: Care plans include documented medication protocols, competency-matched staffing, and escalation pathways for clinical concerns.
+    - question: How is family communication handled?
+      answer: Families receive structured updates at agreed intervals and immediate notifications where there are material care changes.
+    - question: What happens if needs increase unexpectedly?
+      answer: Packages are designed to flex. We can rapidly adjust visit intensity, rota structure, and coordination with clinical partners as needed.
 contactSection:
   heading: Arrange complex home care
   intro: Tell us about your home care needs and we'll guide you through assessment and care planning.

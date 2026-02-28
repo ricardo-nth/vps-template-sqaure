@@ -31,27 +31,27 @@ servicesOverview:
   services:
     - title: Personal Care
       description: Support with washing, dressing, hygiene, and dignity-led daily routines.
-      href: /contact
+      href: /services/complex-care
       imageKey: care-facility
       imageAlt: Carer assisting with personal care planning
     - title: Medication and Health Monitoring
       description: Prompting and administration support with documented records and escalation pathways.
-      href: /contact
+      href: /services/complex-care
       imageKey: residential-care
       imageAlt: Care worker managing medication records
     - title: Meal Preparation and Nutrition
       description: Help with meal preparation, hydration support, and safe nutrition routines.
-      href: /contact
+      href: /services/complex-care
       imageKey: featured-section
       imageAlt: Home care support worker assisting with meal routines
     - title: Wellbeing and Companionship
       description: Planned social support to reduce isolation and improve emotional wellbeing.
-      href: /contact
+      href: /services/complex-care
       imageKey: wellbeing-support
       imageAlt: Support worker engaging in companionship visit
     - title: Post-Discharge Home Support
       description: Structured short-term support following hospital discharge to reduce readmission risk.
-      href: /contact
+      href: /services/complex-care
       imageKey: service-general
       imageAlt: Home care review after hospital discharge
 supportedLivingFeatures:

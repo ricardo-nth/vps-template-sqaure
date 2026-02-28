@@ -36,27 +36,27 @@ servicesOverview:
   services:
     - title: Tenancy and Daily Living Support
       description: Core tenancy support covering routines, risk planning, and independent living milestones.
-      href: /services/supported-living
+      href: /services/complex-care
       imageKey: care-facility
       imageAlt: Supported living resident working with a support worker on life goals
     - title: Life Skills Development
       description: Structured coaching for cooking, budgeting, household tasks, and safe daily decision-making.
-      href: /services/supported-living
+      href: /services/complex-care
       imageKey: residential-care
       imageAlt: Support worker coaching practical daily living skills
     - title: Community Access
       description: Support for appointments, shopping, and social routines that build confidence.
-      href: /services/supported-living
+      href: /services/complex-care
       imageKey: featured-section
       imageAlt: Service user and support worker attending a community activity
     - title: Complex Needs Support
       description: Joined-up support for learning disability, autism, and mental health needs.
-      href: /services/supported-living
+      href: /services/complex-care
       imageKey: wellbeing-support
       imageAlt: Care team reviewing complex support requirements
     - title: Transition Support
       description: Step-down support from hospital or residential care into stable tenancy routines.
-      href: /services/supported-living
+      href: /services/complex-care
       imageKey: service-general
       imageAlt: Care professional guiding a step-down transition plan
 aboutUs:

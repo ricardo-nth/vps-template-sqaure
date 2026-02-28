@@ -36,27 +36,27 @@ servicesOverview:
   services:
     - title: Personal Care Visits
       description: Respectful support with washing, dressing, mobility, and dignity-led morning or evening routines.
-      href: /services
+      href: /services/complex-care
       imageKey: care-facility
       imageAlt: Home care professional helping with a daily routine
     - title: Medication Support
       description: Prompting and administration support with clear records and escalation when health needs shift.
-      href: /services
+      href: /services/complex-care
       imageKey: residential-care
       imageAlt: Care worker checking medication logs during a visit
     - title: Meal and Nutrition Support
       description: Planned help with meal preparation, hydration, and nutritional consistency at home.
-      href: /services
+      href: /services/complex-care
       imageKey: featured-section
       imageAlt: Carer and client preparing a meal in a home kitchen
     - title: Wellbeing and Companionship
       description: Structured social support that reduces isolation and improves emotional wellbeing.
-      href: /services
+      href: /services/complex-care
       imageKey: wellbeing-support
       imageAlt: Support worker and service user having a wellbeing conversation
     - title: Hospital Discharge Reablement
       description: Transitional support after discharge to rebuild confidence and reduce readmission risk.
-      href: /services
+      href: /services/complex-care
       imageKey: service-general
       imageAlt: Domiciliary coordinator reviewing a discharge support plan
 aboutUs:

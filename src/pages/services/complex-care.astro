@@ -2,6 +2,7 @@
 import SiteLayout from '@layouts/SiteLayout.astro';
 import { getEntry } from 'astro:content';
 import PageHero from '@components/PageHero.astro';
+import Icon from '@components/Icon.astro';
 import WhyChooseUs from '@components/WhyChooseUs.astro';
 import CqcJourney from '@components/CqcJourney.astro';
 import ContactSection from '@components/ContactSection.astro';
@@ -39,6 +40,88 @@ const profiles = [
           imageAlt={content.hero.imageAlt}
         />
 
+        <section class="bg-secondary/40 border-y border-border/60">
+          <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+            <div class="max-w-3xl mb-8">
+              <h2 class="text-2xl sm:text-3xl font-semibold text-foreground">{content.outcomesSnapshot.heading}</h2>
+              <p class="mt-3 text-muted-foreground">{content.outcomesSnapshot.intro}</p>
+            </div>
+            <div class="grid gap-4 md:grid-cols-3">
+              {content.outcomesSnapshot.stats.map((stat) => (
+                <article class="rounded-xl border border-border bg-background p-6 shadow-sm">
+                  <p class="text-3xl font-bold text-primary">{stat.value}</p>
+                  <p class="mt-2 font-semibold text-foreground">{stat.label}</p>
+                  <p class="mt-2 text-sm text-muted-foreground">{stat.detail}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-background py-12 md:py-16">
+          <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <span class="inline-flex items-center border border-primary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
+              {content.serviceFit.badgeLabel}
+            </span>
+            <h2 class="mt-4 text-3xl font-semibold text-foreground text-balance">{content.serviceFit.heading}</h2>
+            <p class="mt-3 max-w-3xl text-muted-foreground">{content.serviceFit.intro}</p>
+
+            <div class="mt-8 grid gap-6 lg:grid-cols-2">
+              <article class="rounded-xl border border-border bg-card p-6">
+                <div class="flex items-center gap-3">
+                  <Icon name="tabler:circle-check" class="h-6 w-6 text-primary" aria-hidden={true} />
+                  <h3 class="text-xl font-semibold text-card-foreground">{content.serviceFit.suitableForTitle}</h3>
+                </div>
+                <ul class="mt-5 space-y-3">
+                  {content.serviceFit.suitableFor.map((item) => (
+                    <li class="flex gap-3 text-muted-foreground">
+                      <Icon name="tabler:check" class="mt-1 h-4 w-4 shrink-0 text-primary" aria-hidden={true} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+
+              <article class="rounded-xl border border-border bg-card p-6">
+                <div class="flex items-center gap-3">
+                  <Icon name="tabler:route-off" class="h-6 w-6 text-primary" aria-hidden={true} />
+                  <h3 class="text-xl font-semibold text-card-foreground">{content.serviceFit.alternativeSupportTitle}</h3>
+                </div>
+                <ul class="mt-5 space-y-3">
+                  {content.serviceFit.alternativeSupport.map((item) => (
+                    <li class="flex gap-3 text-muted-foreground">
+                      <Icon name="tabler:minus" class="mt-1 h-4 w-4 shrink-0 text-primary" aria-hidden={true} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-muted/30 py-12 md:py-16">
+          <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-semibold text-foreground text-balance">{content.firstThirtyDays.heading}</h2>
+            <p class="mt-3 max-w-3xl text-muted-foreground">{content.firstThirtyDays.intro}</p>
+
+            <div class="mt-8 grid gap-4 md:grid-cols-3">
+              {content.firstThirtyDays.milestones.map((milestone) => (
+                <article class="rounded-xl border border-border bg-background p-6">
+                  <div class="flex items-center justify-between gap-3">
+                    <span class="inline-flex border border-primary/30 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
+                      {milestone.dayRange}
+                    </span>
+                    <Icon name={milestone.icon} class="h-5 w-5 text-primary" aria-hidden={true} />
+                  </div>
+                  <h3 class="mt-4 text-lg font-semibold text-foreground">{milestone.title}</h3>
+                  <p class="mt-2 text-sm text-muted-foreground">{milestone.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <WhyChooseUs
           eyebrow={content.whyChooseUs.eyebrow}
           heading={content.whyChooseUs.heading}
@@ -53,6 +136,24 @@ const profiles = [
           subheading={content.cqcJourney.subheading}
           steps={content.cqcJourney.steps}
         />
+
+        <section class="bg-background py-12 md:py-16">
+          <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-semibold text-foreground text-balance">{content.faqSection.heading}</h2>
+            <p class="mt-3 text-muted-foreground">{content.faqSection.intro}</p>
+            <div class="mt-8 space-y-4">
+              {content.faqSection.items.map((item) => (
+                <details class="group rounded-xl border border-border bg-card p-5">
+                  <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-card-foreground">
+                    <span>{item.question}</span>
+                    <Icon name="tabler:chevron-down" class="h-5 w-5 shrink-0 text-primary transition-transform group-open:rotate-180" aria-hidden={true} />
+                  </summary>
+                  <p class="mt-3 text-sm leading-relaxed text-muted-foreground">{item.answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <ContactSection
           heading={content.contactSection.heading}
