@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import Icon from './Icon.astro';
 import heroBg from '@assets/images/hero-bg.jpg';
+import { careProfileConfig } from '@/config/site';
 
 interface Props {
   heading?: string;
@@ -13,8 +14,15 @@ interface Props {
   secondaryCtaHref?: string;
   rating?: string;
   ratingLabel?: string;
+  socialProofTitle?: string;
+  socialProofSubtitle?: string;
+  socialProofCountLabel?: string;
   imageSrc?: ImageMetadata;
   imageAlt?: string;
+  profileContent?: {
+    'supported-living'?: { heading?: string; subheading?: string };
+    'dom-care'?: { heading?: string; subheading?: string };
+  };
 }
 
 const {
@@ -26,12 +34,19 @@ const {
   secondaryCtaHref = "#services",
   rating = "",
   ratingLabel = "[YOUR REGION]",
+  socialProofTitle = "Trusted by Families",
+  socialProofSubtitle = "High-quality care delivery",
+  socialProofCountLabel = "420+ weekly visits",
   imageSrc = heroBg,
   imageAlt = "[Describe your hero image]",
+  profileContent = {},
 } = Astro.props as Props;
+
+const instanceId = `hero-${Math.random().toString(36).slice(2, 9)}`;
+const { defaultProfile } = careProfileConfig;
 ---
 
-<section class="relative w-full bg-background overflow-hidden border-b border-border">
+<section class="relative w-full bg-background overflow-hidden border-b border-border" id={instanceId} data-care-profile-content>
   <div class="lg:grid lg:grid-cols-3 min-h-[60vh]">
     
     <!-- Content Column (2/3) -->
@@ -47,12 +62,12 @@ const {
         </div>
 
         <!-- Heading -->
-        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground text-balance mb-6 font-serif leading-tight animate-fade-in-up delay-100">
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground text-balance mb-6 font-serif leading-tight animate-fade-in-up delay-100" data-care-field="heading">
           {heading}
         </h1>
 
         <!-- Subheading -->
-        <p class="text-xl sm:text-2xl text-muted-foreground text-balance mb-8 max-w-2xl leading-relaxed animate-fade-in-up delay-200">
+        <p class="text-xl sm:text-2xl text-muted-foreground text-balance mb-8 max-w-2xl leading-relaxed animate-fade-in-up delay-200" data-care-field="subheading">
           {subheading}
         </p>
 
@@ -72,20 +87,10 @@ const {
           </a>
         </div>
 
-        <!-- Stats -->
-        <div class="mt-10 pt-8 border-t border-border grid grid-cols-3 gap-10 animate-fade-in-up delay-500">
-          <div>
-            <p class="text-4xl font-bold text-primary font-serif">[X]</p>
-            <p class="text-sm font-medium text-muted-foreground mt-1 uppercase tracking-wide">[Stat 1]</p>
-          </div>
-          <div>
-            <p class="text-4xl font-bold text-primary font-serif">[X]+</p>
-            <p class="text-sm font-medium text-muted-foreground mt-1 uppercase tracking-wide">[Stat 2]</p>
-          </div>
-          <div>
-            <p class="text-4xl font-bold text-primary font-serif">[X]%</p>
-            <p class="text-sm font-medium text-muted-foreground mt-1 uppercase tracking-wide">[Stat 3]</p>
-          </div>
+        <div class="mt-10 pt-8 border-t border-border animate-fade-in-up delay-500">
+          <p class="text-sm font-medium text-muted-foreground">
+            {socialProofSubtitle}
+          </p>
         </div>
       </div>
     </div>
@@ -107,7 +112,7 @@ const {
             <Icon name="tabler:quote" class="h-6 w-6" />
           </div>
           <div>
-            <p class="font-bold text-foreground font-serif text-lg">Trusted by Families</p>
+            <p class="font-bold text-foreground font-serif text-lg leading-tight">{socialProofTitle}</p>
             <div class="flex text-accent">
                {[1, 2, 3, 4, 5].map(() => (
                 <Icon name="tabler:star" class="w-4 h-4 fill-current" />
@@ -115,9 +120,12 @@ const {
             </div>
           </div>
         </div>
-        <p class="text-muted-foreground text-sm italic leading-relaxed">
-          "[Client testimonial - what they loved about your service]"
-        </p>
+        <div class="flex items-center justify-between gap-3 flex-wrap">
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            {socialProofSubtitle}
+          </p>
+          <p class="text-sm font-semibold text-foreground whitespace-nowrap">{socialProofCountLabel}</p>
+        </div>
       </div>
     </div>
 
@@ -146,3 +154,24 @@ const {
   .delay-300 { animation-delay: 300ms; }
   .delay-500 { animation-delay: 500ms; }
 </style>
+
+<script is:inline define:vars={{ profileContent, instanceId, defaultProfile }}>
+  (() => {
+    const root = document.getElementById(instanceId);
+    if (!root || !profileContent || Object.keys(profileContent).length === 0) return;
+
+    const apply = (profile) => {
+      const data = profileContent[profile];
+      if (!data) return;
+      const headingNode = root.querySelector('[data-care-field="heading"]');
+      const subheadingNode = root.querySelector('[data-care-field="subheading"]');
+      if (headingNode && data.heading) headingNode.textContent = data.heading;
+      if (subheadingNode && data.subheading) subheadingNode.textContent = data.subheading;
+    };
+
+    apply(document.documentElement.dataset.careProfile || defaultProfile);
+    window.addEventListener('care-profile-change', (event) => {
+      apply(event.detail?.profile || defaultProfile);
+    });
+  })();
+</script>

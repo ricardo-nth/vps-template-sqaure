@@ -1,0 +1,80 @@
+metadata:
+  title: About Harbor Home Care
+  description: Meet Harbor Home Care's domiciliary leadership team and learn how we deliver reliable home visits with continuity, safeguarding, and clear communication.
+  schema:
+    '@context': https://schema.org
+    '@type': AboutPage
+    name: About Harbor Home Care
+    description: Meet Harbor Home Care's domiciliary leadership team and learn how we deliver reliable home visits with continuity, safeguarding, and clear communication.
+hero:
+  heading: Home Care Built on Consistency and <span class="text-accent">Trust</span>
+  subheading: Our domiciliary team combines compassionate support with robust systems so families can rely on safe, predictable care.
+  primaryCtaText: Contact Our Team
+  primaryCtaHref: /contact
+  secondaryCtaText: Read Our Story
+  secondaryCtaHref: '#story'
+  imageKey: hero-bg
+  imageAlt: Domiciliary care managers discussing service delivery standards
+  socialProofTitle: Trusted Domiciliary Team
+  socialProofSubtitle: Focused on continuity and communication
+  socialProofCountLabel: 420+ weekly visits delivered
+stats:
+  - value: 420+
+    label: Weekly Home Visits
+  - value: 97%
+    label: On-Time Visit Performance
+  - value: 95%
+    label: Primary Carer Continuity
+  - value: 96%
+    label: Family Satisfaction
+story:
+  heading: Our Journey
+  subheading: Building dependable home-care delivery for adults and families
+  paragraphs:
+    - Harbor Home Care was created to provide home support that feels both professional and genuinely personal.
+    - We invested early in continuity-led rostering, structured communication, and safeguarding oversight to improve reliability.
+    - Today our domiciliary teams deliver practical support that protects routine, wellbeing, and independent living.
+  imagePlaceholderLabel: Home care team and local community support imagery
+valuesSection:
+  heading: Our Core Values
+  intro: These principles shape every home visit, review conversation, and quality decision.
+values:
+  - title: Respectful Daily Support
+    description: We deliver personal care with dignity, empathy, and attention to individual preference.
+    icon: tabler:heart
+  - title: Reliability You Can Plan Around
+    description: Stable scheduling and contingency planning improve trust and reduce disruption.
+    icon: tabler:calendar-check
+  - title: Safe and Accountable Practice
+    description: Safeguarding and governance standards are embedded in every package.
+    icon: tabler:shield-check
+  - title: Family Communication
+    description: Relatives and professionals receive clear updates and responsive support.
+    icon: tabler:message-circle
+teamSection:
+  heading: Meet Our Home Care Leadership
+  intro: Experienced professionals focused on safe visits, continuity of carers, and operational consistency.
+  members:
+    - name: Leanne Dawson
+      role: Registered Manager
+      credentials: NVQ5, CQC Lead
+      description: Leads quality governance, safeguarding assurance, and domiciliary service standards.
+      imageKey: team-portrait
+      imageAlt: Leanne Dawson, Registered Manager
+    - name: Marcus Reid
+      role: Domiciliary Operations Lead
+      credentials: BSc Health & Social Care
+      description: Oversees rota stability, continuity of carers, and responsiveness across home-care packages.
+      imageKey: team-portrait
+      imageAlt: Marcus Reid, Domiciliary Operations Lead
+    - name: Priya Banerjee
+      role: Care Coordination Manager
+      credentials: QCF Level 3
+      description: Coordinates referrals, review scheduling, and family communication across home support services.
+      imageKey: team-portrait
+      imageAlt: Priya Banerjee, Care Coordination Manager
+ctaSection:
+  heading: Need a Reliable Home Care Partner?
+  intro: Talk to our team about your current support requirements and how we can improve continuity at home.
+  buttonText: Get This Site Built For You
+  buttonHref: https://vertexplatformsolutions.com/offers/healthcare-agencies

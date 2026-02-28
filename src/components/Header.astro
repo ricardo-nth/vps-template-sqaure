@@ -2,6 +2,7 @@
 import Icon from './Icon.astro';
 import { Image } from 'astro:assets';
 import logo from '@assets/placeholder-logo.svg';
+import { siteConfig } from '@/config/site';
 
 interface NavLink {
   label: string;
@@ -18,7 +19,7 @@ interface Props {
 }
 
 const {
-  brandName = "[Business Name]",
+  brandName = siteConfig.name,
   brandHref = "/",
   navLinks = [
     { label: "About", href: "/about" },
@@ -45,7 +46,7 @@ const activeNavLinks = navLinks.map(link => ({
       <a href={brandHref} class="flex items-center gap-4 group">
         <Image
           src={logo}
-          alt="[Business Name] Logo"
+          alt={`${brandName} Logo`}
           class="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-105"
           loading="eager"
         />

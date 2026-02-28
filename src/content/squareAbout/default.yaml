@@ -1,0 +1,80 @@
+metadata:
+  title: About Harbor Care Services
+  description: Learn how Harbor Care Services delivers supported living and domiciliary care through strong governance, continuity of teams, and person-centred outcomes.
+  schema:
+    '@context': https://schema.org
+    '@type': AboutPage
+    name: About Harbor Care Services
+    description: Learn how Harbor Care Services delivers supported living and domiciliary care through strong governance, continuity of teams, and person-centred outcomes.
+hero:
+  heading: Built on Accountability, Compassion, and <span class="text-accent">Progress</span>
+  subheading: Harbor Care combines operational discipline with person-centred delivery so adults can live more safely and independently.
+  primaryCtaText: Contact Our Team
+  primaryCtaHref: /contact
+  secondaryCtaText: Read Our Story
+  secondaryCtaHref: '#story'
+  imageKey: hero-bg
+  imageAlt: Harbor Care leadership team discussing service quality
+  socialProofTitle: Experienced Adult Social Care Partner
+  socialProofSubtitle: Trusted by families, professionals, and commissioners
+  socialProofCountLabel: 15+ years combined leadership experience
+stats:
+  - value: 560+
+    label: Active Care Packages
+  - value: 140+
+    label: Supported Living Placements
+  - value: 420+
+    label: Weekly Domiciliary Visits
+  - value: 96%
+    label: Family and Commissioner Satisfaction
+story:
+  heading: Our Journey
+  subheading: Building services that are both person-centred and inspection-ready
+  paragraphs:
+    - Harbor Care Services started with a clear goal to deliver support that is compassionate in practice and robust in governance.
+    - As demand grew, we invested in specialist training, stronger supervision, and outcome-led review frameworks to improve consistency.
+    - Today we support adults across supported living and domiciliary pathways with clear plans, stable teams, and measurable progress.
+  imagePlaceholderLabel: Harbor Care team and service environment imagery
+valuesSection:
+  heading: Our Core Values
+  intro: These values shape every referral, care plan, and quality decision across our services.
+values:
+  - title: Dignity in Every Interaction
+    description: We deliver respectful, person-centred support that protects choice and autonomy.
+    icon: tabler:heart
+  - title: Reliability Through Systems
+    description: Governance, supervision, and auditing keep quality consistent from policy to frontline practice.
+    icon: tabler:shield-check
+  - title: Outcome-Focused Delivery
+    description: Care plans are linked to practical goals and reviewed regularly with stakeholders.
+    icon: tabler:target-arrow
+  - title: Partnership and Transparency
+    description: Families, professionals, and teams stay aligned through clear and timely communication.
+    icon: tabler:users-group
+teamSection:
+  heading: Meet Our Leadership
+  intro: Experienced leaders focused on safe delivery, team development, and measurable outcomes.
+  members:
+    - name: Leanne Dawson
+      role: Registered Manager
+      credentials: NVQ5, CQC Lead
+      description: Leads quality governance, safeguarding oversight, and compliance standards across all services.
+      imageKey: team-portrait
+      imageAlt: Leanne Dawson, Registered Manager
+    - name: Marcus Reid
+      role: Operations Lead
+      credentials: BSc Health & Social Care
+      description: Oversees continuity planning, service performance, and multidisciplinary collaboration.
+      imageKey: team-portrait
+      imageAlt: Marcus Reid, Operations Lead
+    - name: Priya Banerjee
+      role: Care Coordination Manager
+      credentials: QCF Level 3
+      description: Coordinates referrals, outcome reviews, and communication between families and partner professionals.
+      imageKey: team-portrait
+      imageAlt: Priya Banerjee, Care Coordination Manager
+ctaSection:
+  heading: Looking for a Dependable Care Partner?
+  intro: Speak with our team about your current referral requirements and the outcomes you need to achieve.
+  buttonText: Get This Site Built For You
+  buttonHref: https://vertexplatformsolutions.com/offers/healthcare-agencies

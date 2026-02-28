@@ -1,76 +1,76 @@
 ---
 import SiteLayout from '@layouts/SiteLayout.astro';
+import { getEntry } from 'astro:content';
 import PageHero from '@components/PageHero.astro';
 import WhyChooseUs from '@components/WhyChooseUs.astro';
 import CqcJourney from '@components/CqcJourney.astro';
 import ContactSection from '@components/ContactSection.astro';
-import { siteConfig } from '@/config/site';
+import { getSquareImage } from '@/lib/content/imageRegistry';
 
-const metadata = {
-  title: `Complex Care Services - ${siteConfig.name}`,
-  description: 'Specialist, nurse-led complex care designed for individuals with higher clinical needs, delivered with compassion, safety, and continuity.',
-  schema: {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'Complex Care Services',
-    description: 'Specialist complex care with individualized plans, clinical oversight, and coordinated support for higher-needs clients.',
-    serviceType: 'Complex Care',
-    provider: {
-      '@type': 'Organization',
-      name: siteConfig.name
-    },
-    areaServed: '[Your Service Area]'
-  }
-};
+const complexCareEntry = await getEntry('squareComplexCare', 'default');
+const complexCareDomEntry = await getEntry('squareComplexCare', 'dom-care');
+if (!complexCareEntry) {
+  throw new Error('Missing content entry: squareComplexCare/default');
+}
+if (!complexCareDomEntry) {
+  throw new Error('Missing content entry: squareComplexCare/dom-care');
+}
+
+const metadata = complexCareEntry.data.metadata;
+const profiles = [
+  { key: 'supported-living', content: complexCareEntry.data },
+  { key: 'dom-care', content: complexCareDomEntry.data },
+] as const;
 ---
 
 <SiteLayout metadata={metadata}>
-  <PageHero
-    heading="Complex Care Services"
-    subheading="Compassionate, clinically informed support for individuals with complex health needs. We deliver tailored care plans, consistent staffing, and coordinated clinical oversight to help clients live safely and confidently."
-    primaryCtaText="Speak to Our Team"
-    primaryCtaHref="/contact"
-    secondaryCtaText="Our Care Standards"
-    secondaryCtaHref="#quality"
-    imageAlt="Complex care support team"
-  />
+  <div data-care-profile-switcher>
+    {profiles.map(({ key, content }) => (
+      <div data-care-profile-panel={key} class:list={{ hidden: key !== 'supported-living' }}>
+        <PageHero
+          heading={content.hero.heading}
+          subheading={content.hero.subheading}
+          profileContent={content.hero.profileContent}
+          primaryCtaText={content.hero.primaryCtaText}
+          primaryCtaHref={content.hero.primaryCtaHref}
+          secondaryCtaText={content.hero.secondaryCtaText}
+          secondaryCtaHref={content.hero.secondaryCtaHref}
+          imageSrc={getSquareImage(content.hero.imageKey)}
+          imageAlt={content.hero.imageAlt}
+        />
 
-  <WhyChooseUs
-    eyebrow="Complex Care"
-    heading="Specialist support built around the individual"
-    intro="We combine clinical expertise with person-centred care to deliver safe, reliable complex care that adapts to changing needs and priorities."
-    points={[
-      {
-        title: 'Nurse-led care planning',
-        description: 'Personalized care plans shaped by clinical assessments, risk management, and ongoing reviews.',
-        iconName: 'tabler:stethoscope'
-      },
-      {
-        title: 'Continuity of care',
-        description: 'Consistent staffing and clear handovers to build trust, stability, and better outcomes.',
-        iconName: 'tabler:users-group'
-      },
-      {
-        title: '24/7 responsive support',
-        description: 'Rapid escalation pathways and round-the-clock availability for complex needs.',
-        iconName: 'tabler:clock-hour-4'
-      },
-      {
-        title: 'Quality & safety focus',
-        description: 'Robust governance, medication management, and compliance-driven care delivery.',
-        iconName: 'tabler:shield-check'
-      }
-    ]}
-    id="quality"
-  />
+        <WhyChooseUs
+          eyebrow={content.whyChooseUs.eyebrow}
+          heading={content.whyChooseUs.heading}
+          intro={content.whyChooseUs.intro}
+          id={content.whyChooseUs.id}
+          points={content.whyChooseUs.points}
+        />
 
-  <CqcJourney
-    heading="Quality assurance you can trust"
-    subheading="Transparent, accountable processes that demonstrate our commitment to safe, compliant complex care."
-  />
+        <CqcJourney
+          badgeLabel={content.cqcJourney.badgeLabel}
+          heading={content.cqcJourney.heading}
+          subheading={content.cqcJourney.subheading}
+          steps={content.cqcJourney.steps}
+        />
 
-  <ContactSection
-    heading="Discuss complex care support"
-    intro="Tell us about your needs and we’ll guide you through the next steps, from assessment to tailored care planning."
-  />
+        <ContactSection
+          heading={content.contactSection.heading}
+          intro={content.contactSection.intro}
+          phoneLabel={content.contactSection.phoneLabel}
+          phoneHref={content.contactSection.phoneHref}
+          emailLabel={content.contactSection.emailLabel}
+          emailHref={content.contactSection.emailHref}
+          emailButtonText={content.contactSection.emailButtonText}
+          address={content.contactSection.address}
+          officeTitle={content.contactSection.officeTitle}
+          officeDirectionsText={content.contactSection.officeDirectionsText}
+          officeDirectionsHref={content.contactSection.officeDirectionsHref}
+          hoursTitle={content.contactSection.hoursTitle}
+          officeHours={content.contactSection.officeHours}
+          hoursNote={content.contactSection.hoursNote}
+        />
+      </div>
+    ))}
+  </div>
 </SiteLayout>

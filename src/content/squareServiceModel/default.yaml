@@ -1,0 +1,86 @@
+metadata:
+  title: Our Service Model - Harbor Care Services
+  description: See how Harbor Care delivers supported living and domiciliary pathways through structured planning, governance discipline, and review-led outcomes.
+  schema:
+    '@context': https://schema.org
+    '@type': WebPage
+    name: Our Service Model
+    description: See how Harbor Care delivers supported living and domiciliary pathways through structured planning, governance discipline, and review-led outcomes.
+hero:
+  heading: A Service Model Built for <span class="text-accent">Consistency</span>
+  subheading: We combine person-centred planning, operational discipline, and transparent communication so support remains safe and dependable over time.
+  primaryCtaText: Contact Us
+  primaryCtaHref: /contact
+  secondaryCtaText: Our Principles
+  secondaryCtaHref: '#values'
+  imageKey: hero-bg
+  imageAlt: Harbor Care managers reviewing service delivery process
+whyChooseUs:
+  eyebrow: Our Principles
+  heading: Why Our Delivery Model Works
+  intro: Clear frameworks, stable staffing, and review-led adaptation turn care plans into practical day-to-day progress.
+  imageKey: featured-section
+  imageAlt: Care team discussing quality and outcome tracking
+  id: values
+  points:
+    - title: Person-Centred Planning
+      description: Every package is co-produced around individual goals, strengths, and risk context.
+      iconName: tabler:user-heart
+    - title: Structured Governance
+      description: Supervision, audits, and escalation pathways keep quality consistent across teams.
+      iconName: tabler:shield-check
+    - title: Collaborative Communication
+      description: Families, professionals, and frontline staff stay aligned through clear review cycles.
+      iconName: tabler:message-circle
+    - title: Measurable Outcomes
+      description: Progress is tracked against practical milestones and adapted when circumstances change.
+      iconName: tabler:trending-up
+  testimonial:
+    quote: Their model is clear, accountable, and focused on outcomes we can actually monitor.
+    initials: JR
+    author: J. Rogers
+    role: Commissioning Partner
+cqcJourney:
+  badgeLabel: Quality and Readiness
+  heading: How We Keep Services Inspection-Ready
+  subheading: We maintain transparent governance and continuous improvement across every service pathway.
+  steps:
+    - title: Governance Framework and Safeguarding Controls
+      description: Policies, incident workflows, and quality standards implemented across supported living and domiciliary teams.
+      status: completed
+      date: In place
+    - title: Workforce Competency and Supervision
+      description: Ongoing training, supervision, and competency checks sustain safe and consistent frontline delivery.
+      status: completed
+      date: Ongoing
+    - title: Outcome Review Discipline
+      description: Monthly reviews track progress, risks, and plan changes with service users and stakeholders.
+      status: current
+      date: Active
+    - title: Service Improvement Actions
+      description: Audits, feedback, and incident trends are converted into measurable improvement plans.
+      status: upcoming
+    - title: Continuous Quality Cycle
+      description: Leadership oversight ensures service quality evolves with needs, guidance, and evidence.
+      status: upcoming
+contactSection:
+  heading: Talk Through Your Service Requirements
+  intro: Share your care challenges and we will outline a practical model aligned to outcomes, compliance, and continuity.
+  phoneLabel: 0208 555 0199
+  phoneHref: tel:+442085550199
+  emailLabel: referrals@harborcare.co.uk
+  emailHref: mailto:referrals@harborcare.co.uk
+  emailButtonText: Start a Conversation
+  address: Unit 12, Healthcare Business Park, London, SE1 7PB
+  officeTitle: Service Development Team
+  officeDirectionsText: Get Directions
+  officeDirectionsHref: https://www.google.com/maps/dir//London+Eye,+Riverside+Building,+County+Hall,+London+SE1+7PB
+  hoursTitle: Consultation Hours
+  officeHours:
+    - day: Monday - Friday
+      time: 9:00 AM - 6:00 PM
+    - day: Saturday
+      time: 10:00 AM - 2:00 PM
+    - day: Sunday
+      time: Closed
+  hoursNote: Existing service users can access emergency support 24/7.

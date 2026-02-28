@@ -1,0 +1,88 @@
+metadata:
+  title: Complex Home Care Services - Harbor Care Services
+  description: Specialist domiciliary complex care for adults with higher clinical needs, delivered at home with nursing oversight and coordinated support.
+  schema:
+    '@context': https://schema.org
+    '@type': Service
+    name: Complex Home Care Services
+    description: Specialist domiciliary complex care with nursing coordination, medication management, and home-based clinical support.
+    serviceType: Complex Domiciliary Care
+    provider:
+      '@type': Organization
+      name: Harbor Care Services
+    areaServed: London and surrounding boroughs
+hero:
+  heading: Complex Home Care Services
+  subheading: Specialist domiciliary care for clients with higher clinical needs, delivered at home with nursing oversight and coordinated family communication.
+  profileContent:
+    supported-living:
+      heading: Complex Supported Living Services
+      subheading: Compassionate, clinically informed support for people with complex needs while protecting independence and routine stability.
+    dom-care:
+      heading: Complex Domiciliary Care Services
+      subheading: Specialist home-care support for higher clinical needs with coordinated oversight, safety planning, and continuity.
+  primaryCtaText: Speak to Our Clinical Team
+  primaryCtaHref: /contact
+  secondaryCtaText: Our Care Standards
+  secondaryCtaHref: '#quality'
+  imageKey: hero-bg
+  imageAlt: Complex home care team
+whyChooseUs:
+  eyebrow: Complex Home Care
+  heading: Clinical expertise delivered at home
+  intro: We bring specialist nursing coordination and person-centred support into the home, maintaining safety and dignity for clients with complex needs.
+  id: quality
+  points:
+    - title: Nursing oversight
+      description: Regular clinical reviews and nursing-led care coordination for complex medication and health needs.
+      iconName: tabler:stethoscope
+    - title: Reliable visit schedules
+      description: Consistent carers and structured visit times for continuity and trust at home.
+      iconName: tabler:clock-hour-4
+    - title: Family coordination
+      description: Clear communication with families, district nurses, and GP practices.
+      iconName: tabler:users-group
+    - title: Safety-first approach
+      description: Risk assessments, emergency protocols, and robust medication management.
+      iconName: tabler:shield-check
+cqcJourney:
+  badgeLabel: Quality Assurance
+  heading: Home-based clinical quality
+  subheading: Governance and oversight that ensures safe, compliant complex care delivered at home.
+  steps:
+    - title: Home Care Governance
+      description: Policies and procedures specifically designed for complex care delivery in domestic settings.
+      status: completed
+      date: Completed Q2 2024
+    - title: Clinical Competency Training
+      description: Carer training verified for complex medication, PEG feeding, and catheter care.
+      status: completed
+      date: Completed Q3 2024
+    - title: Multi-Agency Protocols
+      description: Established communication pathways with district nurses, GPs, and hospital discharge teams.
+      status: current
+      date: In Progress
+    - title: Outcome Tracking
+      description: Regular quality audits and outcome measurement for continuous improvement.
+      status: upcoming
+contactSection:
+  heading: Arrange complex home care
+  intro: Tell us about your home care needs and we'll guide you through assessment and care planning.
+  phoneLabel: 0208 555 0199
+  phoneHref: tel:+442085550199
+  emailLabel: referrals@harborcare.co.uk
+  emailHref: mailto:referrals@harborcare.co.uk
+  emailButtonText: Start Complex Home Care Enquiry
+  address: Unit 12, Healthcare Business Park, London, SE1 7PB
+  officeTitle: Complex Home Care Team
+  officeDirectionsText: Get Directions
+  officeDirectionsHref: https://www.google.com/maps/dir//London+Eye,+Riverside+Building,+County+Hall,+London+SE1+7PB
+  hoursTitle: Assessment Hours
+  officeHours:
+    - day: Monday - Friday
+      time: 9:00 AM - 6:00 PM
+    - day: Saturday
+      time: By appointment
+    - day: Sunday
+      time: Closed
+  hoursNote: Clinical support available 24/7 for active complex care clients.

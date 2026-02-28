@@ -11,6 +11,7 @@ A geometric, structured Astro.js template for healthcare agencies with strong li
 - TypeScript
 - SEO ready
 - Professional, structured design system
+- Dual-profile preview mode (Supported Living + Domiciliary Care)
 
 ## Quick Start
 
@@ -30,6 +31,55 @@ A geometric, structured Astro.js template for healthcare agencies with strong li
 
 5. Open the local URL shown in the terminal and begin editing content.
 
+## Dual-Profile Preview Mode
+
+This template supports dual-profile preview mode for agencies that want to showcase both Supported Living and Domiciliary Care service offerings on the same canonical URLs.
+
+### Preview Mode (Default)
+
+By default, the template renders both profiles with a toggle control bar:
+
+```bash
+pnpm dev
+# or
+pnpm build
+```
+
+### Production Mode - Single Profile Handoff
+
+For production handoff to a single profile, set the environment variables:
+
+**For Supported Living:**
+```bash
+PUBLIC_CARE_PROFILE_PREVIEW=false PUBLIC_DEFAULT_CARE_PROFILE=supported-living pnpm build
+```
+
+**For Domiciliary Care:**
+```bash
+PUBLIC_CARE_PROFILE_PREVIEW=false PUBLIC_DEFAULT_CARE_PROFILE=dom-care pnpm build
+```
+
+### Environment Variables
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `PUBLIC_CARE_PROFILE_PREVIEW` | Enable/disable profile toggle UI | `true` |
+| `PUBLIC_DEFAULT_CARE_PROFILE` | Default profile (`supported-living` or `dom-care`) | `supported-living` |
+
+### Content Collections
+
+All page content is stored in Astro content collections at `src/content/`:
+
+- `squareGlobal/` - Global settings (profile summary copy)
+- `squareHome/` - Homepage content
+- `squareServices/` - Services page content
+- `squareComplexCare/` - Complex care service page content
+- `squareAbout/` - About page content
+- `squareContact/` - Contact page content
+- `squareServiceModel/` - Our service model page content
+
+Each collection has `default.yaml` (Supported Living) and `dom-care.yaml` (Domiciliary Care) entries.
+
 ## Customization Checklist
 
 - [ ] Update `src/config/site.ts`
@@ -39,6 +89,7 @@ A geometric, structured Astro.js template for healthcare agencies with strong li
 - [ ] Customize the CQC journey
 - [ ] Replace images with your own
 - [ ] Update the logo
+- [ ] Edit content collections in `src/content/`
 
 ## Service Detail Pages
 
@@ -52,7 +103,9 @@ The template includes a detailed service page example with a full CQC journey:
 src/
   components/    Reusable UI components
   config/        Site configuration
+  content/       Content collections (YAML)
   layouts/       Layout wrappers
+  lib/           Utilities (image registry)
   pages/         Route-based pages
   styles/        Global styles
 public/          Static assets

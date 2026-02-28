@@ -8,9 +8,11 @@
  * - Image optimization with Astro's Image component
  * - Tailwind CSS styling
  * - Performance best practices
+ * - Dual-profile content switching
  */
 
 import SiteLayout from '../layouts/SiteLayout.astro';
+import { getEntry } from 'astro:content';
 
 // Components
 import Hero from '../components/Hero.astro';
@@ -19,75 +21,107 @@ import AboutUs from '../components/AboutUs.astro';
 import WhyChooseUs from '../components/WhyChooseUs.astro';
 import TeamSection from '../components/TeamSection.astro';
 import ContactSection from '../components/ContactSection.astro';
+import { getSquareImage } from '@/lib/content/imageRegistry';
 
-// Page metadata - Update for your business
-const metadata = {
-  title: 'Home - [Business Name]',
-  description: '[Your business description - what services you provide and who you serve]',
-  schema: {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: 'Home - [Business Name]',
-    description: '[Your business description - what services you provide and who you serve]',
-  },
-};
+const homeEntry = await getEntry('squareHome', 'default');
+const homeDomEntry = await getEntry('squareHome', 'dom-care');
+if (!homeEntry) {
+  throw new Error('Missing content entry: squareHome/default');
+}
+if (!homeDomEntry) {
+  throw new Error('Missing content entry: squareHome/dom-care');
+}
+
+const metadata = homeEntry.data.metadata;
+const profiles = [
+  { key: 'supported-living', content: homeEntry.data },
+  { key: 'dom-care', content: homeDomEntry.data },
+] as const;
 ---
 
 <SiteLayout metadata={metadata}>
+  <div data-care-profile-switcher>
+    {profiles.map(({ key, content }) => (
+      <div data-care-profile-panel={key} class:list={{ hidden: key !== 'supported-living' }}>
+        <Hero
+          heading={content.hero.heading}
+          subheading={content.hero.subheading}
+          profileContent={content.hero.profileContent}
+          primaryCtaText={content.hero.primaryCtaText}
+          primaryCtaHref={content.hero.primaryCtaHref}
+          secondaryCtaText={content.hero.secondaryCtaText}
+          secondaryCtaHref={content.hero.secondaryCtaHref}
+          rating={content.hero.rating}
+          ratingLabel={content.hero.ratingLabel}
+          imageSrc={getSquareImage(content.hero.imageKey)}
+          imageAlt={content.hero.imageAlt}
+          socialProofTitle={content.hero.socialProofTitle}
+          socialProofSubtitle={content.hero.socialProofSubtitle}
+          socialProofCountLabel={content.hero.socialProofCountLabel}
+        />
 
-  <!-- Hero Section -->
-  <Hero />
+        <ServicesOverview
+          eyebrow={content.servicesOverview.eyebrow}
+          heading={content.servicesOverview.heading}
+          intro={content.servicesOverview.intro}
+          ctaText={content.servicesOverview.ctaText}
+          ctaHref={content.servicesOverview.ctaHref}
+          services={content.servicesOverview.services.map(({ imageKey, ...service }) => ({
+            ...service,
+            imageSrc: getSquareImage(imageKey),
+          }))}
+        />
 
-  <!-- Services Section -->
-  <ServicesOverview
-    eyebrow="Our Services"
-  />
+        <AboutUs
+          eyebrow={content.aboutUs.eyebrow}
+          heading={content.aboutUs.heading}
+          description={content.aboutUs.description}
+          imageSrc={getSquareImage(content.aboutUs.imageKey)}
+          imageAlt={content.aboutUs.imageAlt}
+          phoneLabel={content.aboutUs.phoneLabel}
+          phoneHref={content.aboutUs.phoneHref}
+          sectionId={content.aboutUs.sectionId}
+        />
 
-  <!-- About Us Section -->
-  <AboutUs
-    eyebrow="About Us"
-  />
+        <WhyChooseUs
+          eyebrow={content.whyChooseUs.eyebrow}
+          heading={content.whyChooseUs.heading}
+          intro={content.whyChooseUs.intro}
+          imageSrc={getSquareImage(content.whyChooseUs.imageKey)}
+          imageAlt={content.whyChooseUs.imageAlt}
+          ctaText={content.whyChooseUs.ctaText}
+          ctaHref={content.whyChooseUs.ctaHref}
+          class={content.whyChooseUs.className}
+          points={content.whyChooseUs.points}
+          testimonial={content.whyChooseUs.testimonial}
+        />
 
-  <!-- Why Choose Us Section -->
-  <WhyChooseUs
-    eyebrow="Why Choose Us"
-    intro="[Your value proposition - why clients should choose your services over competitors]"
-    points={[
-      {
-        title: "[Differentiator 1]",
-        description: "[Description of your first key differentiator or benefit]",
-        iconName: "tabler:shield-check"
-      },
-      {
-        title: "[Differentiator 2]",
-        description: "[Description of your second key differentiator or benefit]",
-        iconName: "tabler:user-heart"
-      },
-      {
-        title: "[Differentiator 3]",
-        description: "[Description of your third key differentiator or benefit]",
-        iconName: "tabler:users-group"
-      },
-      {
-        title: "[Differentiator 4]",
-        description: "[Description of your fourth key differentiator or benefit]",
-        iconName: "tabler:certificate"
-      }
-    ]}
-  />
+        <TeamSection
+          heading={content.teamSection.heading}
+          intro={content.teamSection.intro}
+          members={content.teamSection.members.map(({ imageKey, ...member }) => ({
+            ...member,
+            image: getSquareImage(imageKey),
+          }))}
+        />
 
-  <!-- Team Section -->
-  <TeamSection
-    eyebrow="Our Team"
-    heading="[Your Team Heading]"
-    intro="[Brief description of your team and their dedication to clients]"
-  />
-
-  <!-- Contact Section -->
-  <ContactSection
-    phoneLabel="[Your Phone]"
-    phoneHref="tel:[YourPhoneNumber]"
-    address="[Your City, Region]"
-  />
-
+        <ContactSection
+          heading={content.contactSection.heading}
+          intro={content.contactSection.intro}
+          phoneLabel={content.contactSection.phoneLabel}
+          phoneHref={content.contactSection.phoneHref}
+          emailLabel={content.contactSection.emailLabel}
+          emailHref={content.contactSection.emailHref}
+          emailButtonText={content.contactSection.emailButtonText}
+          address={content.contactSection.address}
+          officeTitle={content.contactSection.officeTitle}
+          officeDirectionsText={content.contactSection.officeDirectionsText}
+          officeDirectionsHref={content.contactSection.officeDirectionsHref}
+          hoursTitle={content.contactSection.hoursTitle}
+          officeHours={content.contactSection.officeHours}
+          hoursNote={content.contactSection.hoursNote}
+        />
+      </div>
+    ))}
+  </div>
 </SiteLayout>

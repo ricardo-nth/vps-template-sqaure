@@ -1,0 +1,197 @@
+metadata:
+  title: Services - Harbor Care Services
+  description: Explore supported living and domiciliary care pathways delivered with clear governance, continuity of teams, and measurable outcomes.
+  schema:
+    '@context': https://schema.org
+    '@type': CollectionPage
+    name: Harbor Care Services
+    description: Explore supported living and domiciliary care pathways delivered with clear governance, continuity of teams, and measurable outcomes.
+    mainEntity:
+      '@type': Service
+      name: Care Services
+      description: Specialist supported living and domiciliary care pathways for adults with diverse support needs.
+      serviceType: Supported Living and Domiciliary Care
+      provider:
+        '@type': Organization
+        name: Harbor Care Services
+      areaServed: London and surrounding boroughs
+hero:
+  heading: Care Pathways Designed for Real-World Delivery
+  subheading: From tenancy-based support to home visits, every package is structured around safety, continuity, and measurable progress.
+  primaryCtaText: Enquire Today
+  primaryCtaHref: /contact
+  secondaryCtaText: Explore Service Types
+  secondaryCtaHref: '#features'
+  imageKey: hero-bg
+  imageAlt: Care team discussing support pathways with a family
+servicesOverview:
+  eyebrow: Service Categories
+  heading: Supported Living Service Lines
+  intro: Our supported living model combines tenancy support, life-skills coaching, and structured review cycles.
+  services:
+    - title: Tenancy and Daily Living Support
+      description: Core tenancy support covering routines, risk planning, and independent living milestones.
+      href: /services/supported-living
+      imageKey: care-facility
+      imageAlt: Supported living professional and resident planning goals
+    - title: Life Skills Development
+      description: Coaching for cooking, budgeting, household routines, and safe independent decision-making.
+      href: /services/supported-living
+      imageKey: residential-care
+      imageAlt: Support worker helping a resident build daily life skills
+    - title: Community Access
+      description: Support for appointments, shopping, and social routines that build confidence.
+      href: /services/supported-living
+      imageKey: featured-section
+      imageAlt: Service user and support worker in the community
+    - title: Complex Needs Support
+      description: Joined-up support for learning disability, autism, and mental health needs.
+      href: /services/supported-living
+      imageKey: wellbeing-support
+      imageAlt: Care team planning a multidisciplinary support package
+    - title: Transition Support
+      description: Step-down support from hospital or residential care into stable tenancy routines.
+      href: /services/supported-living
+      imageKey: service-general
+      imageAlt: Care coordinator reviewing transition plans with stakeholders
+supportedLivingFeatures:
+  heading: Supported Living Done Right
+  subheading: Support designed to balance independence goals with safeguarding, structure, and quality assurance.
+  features:
+    - icon: tabler:home
+      title: Independence First
+      description: Support delivered in real homes with practical goals around autonomy and routine confidence.
+    - icon: tabler:user-check
+      title: Co-Produced Outcome Plans
+      description: Plans are built with service users and regularly reviewed with families and professionals.
+    - icon: tabler:shield-check
+      title: CQC-Aligned Governance
+      description: Documentation, audits, and supervision frameworks support inspection-ready practice.
+    - icon: tabler:clock-24
+      title: Responsive Continuity
+      description: Stable staffing and escalation routes maintain safer support during change.
+    - icon: tabler:heart-handshake
+      title: Relationship-Led Delivery
+      description: Consistent matching improves engagement, communication, and trust.
+    - icon: tabler:trending-up
+      title: Measurable Progress
+      description: Reviews track life skills, tenancy sustainment, and participation outcomes.
+serviceSpecialties:
+  heading: Specialist Care Pathways
+  subheading: Dedicated support streams for diverse needs, delivered within one clear quality framework.
+  specialties:
+    - title: Learning Disabilities
+      description: Goal-led support focused on communication, confidence, and meaningful participation.
+      icon: tabler:bulb
+      imageKey: service-general
+      features:
+        - Skill acquisition
+        - Community integration
+        - Communication support
+    - title: Autism and Neurodiversity
+      description: Structured, sensory-aware support that improves predictability and wellbeing.
+      icon: tabler:puzzle
+      imageKey: service-general
+      features:
+        - Sensory-aware routines
+        - Anxiety reduction planning
+        - Specialist-trained teams
+    - title: Mental Health Support
+      description: Recovery-oriented pathways linking daily routines to emotional wellbeing and stability.
+      icon: tabler:brain
+      imageKey: service-general
+      features:
+        - Recovery planning
+        - Relapse prevention
+        - Emotional resilience
+    - title: Physical Disabilities
+      description: Accessible support designed around mobility, function, and practical independence.
+      icon: tabler:wheelchair
+      imageKey: service-general
+      features:
+        - Accessibility adaptation
+        - Daily living support
+        - Mobility assistance
+    - title: Older Adults
+      description: Dignified care balancing safety, social connection, and independent living.
+      icon: tabler:cane
+      imageKey: service-general
+      features:
+        - Wellbeing checks
+        - Companionship
+        - Routine continuity
+    - title: Transitional Support
+      description: Step-down pathways helping adults move into stable long-term support arrangements.
+      icon: tabler:walk
+      imageKey: service-general
+      features:
+        - Life-skills onboarding
+        - Tenancy setup support
+        - Family transition planning
+compliancePillars:
+  badgeLabel: CQC Standards
+  heading: Inspection-Ready Quality Across All 5 Pillars
+  subheading: Our delivery model combines person-centred care with operational discipline that stands up to scrutiny.
+  pillars:
+    - icon: tabler:shield-check
+      title: Safe
+      description: Structured safeguarding and risk controls embedded in daily practice.
+      cqcEvidence: Safeguarding and incident audits completed monthly
+    - icon: tabler:target-arrow
+      title: Effective
+      description: Outcome-linked plans are reviewed with service users and stakeholders.
+      cqcEvidence: Goal progression tracked in formal review cycles
+    - icon: tabler:heart-handshake
+      title: Caring
+      description: Delivery is respectful, dignified, and tailored to individual communication needs.
+      cqcEvidence: Consistent positive family and service-user feedback
+    - icon: tabler:list-details
+      title: Responsive
+      description: Teams adapt quickly when health, risk, or personal circumstances change.
+      cqcEvidence: Time-bound plan updates and response logs
+    - icon: tabler:crown
+      title: Well-Led
+      description: Leadership, supervision, and quality governance drive continuous improvement.
+      cqcEvidence: Documented supervision and governance calendar
+careDeliveryProcess:
+  badgeLabel: The Journey
+  heading: Our Delivery Process
+  subheading: A practical end-to-end framework from referral triage through long-term outcome review.
+  steps:
+    - number: 1
+      icon: tabler:clipboard-search
+      title: Referral and Assessment
+      description: We assess needs, risks, and desired outcomes with service users, families, and professionals.
+    - number: 2
+      icon: tabler:file-text
+      title: Plan Design
+      description: We agree clear actions, review points, communication standards, and safeguarding controls.
+    - number: 3
+      icon: tabler:users
+      title: Team Matching and Launch
+      description: We assign trained staff for compatibility, continuity, and safe service start.
+    - number: 4
+      icon: tabler:refresh
+      title: Review and Adapt
+      description: We track progress and refine support as needs and outcomes evolve.
+contactSection:
+  heading: Build the Right Package for Your Referral
+  intro: Share your current requirements and we will map a practical support pathway aligned to outcomes and continuity.
+  phoneLabel: 0208 555 0199
+  phoneHref: tel:+442085550199
+  emailLabel: referrals@harborcare.co.uk
+  emailHref: mailto:referrals@harborcare.co.uk
+  emailButtonText: Email Referrals Team
+  address: Unit 12, Healthcare Business Park, London, SE1 7PB
+  officeTitle: Referrals and Partnerships Desk
+  officeDirectionsText: Get Directions
+  officeDirectionsHref: https://www.google.com/maps/dir//London+Eye,+Riverside+Building,+County+Hall,+London+SE1+7PB
+  hoursTitle: Referrals Hours
+  officeHours:
+    - day: Monday - Friday
+      time: 8:30 AM - 6:30 PM
+    - day: Saturday
+      time: 10:00 AM - 2:00 PM
+    - day: Sunday
+      time: Closed
+  hoursNote: Emergency support line remains available 24/7 for active service users.

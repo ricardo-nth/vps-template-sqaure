@@ -1,0 +1,143 @@
+metadata:
+  title: Harbor Care Services
+  description: Outcome-led supported living and dependable domiciliary care delivered with clear governance, continuity, and person-centred planning.
+  schema:
+    '@context': https://schema.org
+    '@type': WebPage
+    name: Harbor Care Services
+    description: Outcome-led supported living and dependable domiciliary care delivered with clear governance, continuity, and person-centred planning.
+hero:
+  heading: Care Services Built Around Stability and Progress
+  subheading: We support adults, families, and commissioners with structured planning, dependable teams, and outcomes that are visible in everyday life.
+  profileContent:
+    supported-living:
+      heading: Supported Living With Clear Independence Outcomes
+      subheading: Structured tenancy support that helps adults build life skills, sustain placements, and participate confidently in their communities.
+    dom-care:
+      heading: Domiciliary Care That Families Can Rely On
+      subheading: Reliable home visits with continuity of carers, safe routines, and communication that keeps everyone informed.
+  primaryCtaText: Explore Services
+  primaryCtaHref: /services
+  secondaryCtaText: Talk to Our Team
+  secondaryCtaHref: /contact
+  rating: 96%
+  ratingLabel: Family and Commissioner Satisfaction
+  imageKey: hero-bg
+  imageAlt: Care coordinator reviewing a person-centred plan with a client
+  socialProofTitle: Operationally Strong, Person-Centred by Design
+  socialProofSubtitle: Trusted by families, commissioners, and referral teams
+  socialProofCountLabel: 560+ active care packages
+servicesOverview:
+  eyebrow: Services
+  heading: Supported Living Service Lines
+  intro: Our supported living pathways are built around tenancy stability, life-skills development, and measurable independence outcomes.
+  ctaText: View Service Library
+  ctaHref: /services
+  services:
+    - title: Tenancy and Daily Living Support
+      description: Core tenancy support covering routines, risk planning, and independent living milestones.
+      href: /services/supported-living
+      imageKey: care-facility
+      imageAlt: Supported living resident working with a support worker on life goals
+    - title: Life Skills Development
+      description: Structured coaching for cooking, budgeting, household tasks, and safe daily decision-making.
+      href: /services/supported-living
+      imageKey: residential-care
+      imageAlt: Support worker coaching practical daily living skills
+    - title: Community Access
+      description: Support for appointments, shopping, and social routines that build confidence.
+      href: /services/supported-living
+      imageKey: featured-section
+      imageAlt: Service user and support worker attending a community activity
+    - title: Complex Needs Support
+      description: Joined-up support for learning disability, autism, and mental health needs.
+      href: /services/supported-living
+      imageKey: wellbeing-support
+      imageAlt: Care team reviewing complex support requirements
+    - title: Transition Support
+      description: Step-down support from hospital or residential care into stable tenancy routines.
+      href: /services/supported-living
+      imageKey: service-general
+      imageAlt: Care professional guiding a step-down transition plan
+aboutUs:
+  eyebrow: About Harbor Care
+  heading: Strong Governance, Human Delivery
+  description:
+    - Harbor Care Services was built to close the gap between compliance-heavy processes and genuinely person-centred support.
+    - We combine robust oversight with practical frontline delivery so adults can progress safely and consistently.
+    - Families and professionals receive straightforward updates, evidence-based reviews, and reliable escalation pathways.
+  imageKey: about-team
+  imageAlt: Harbor Care professionals in a service planning meeting
+  phoneLabel: 0208 555 0199
+  phoneHref: tel:+442085550199
+  sectionId: about
+whyChooseUs:
+  eyebrow: Why Harbor Care
+  heading: Designed for Dependability Across Every Package
+  intro: Our model prioritises safe delivery, continuity of relationships, and measurable outcomes from first referral to long-term support.
+  imageKey: featured-section
+  imageAlt: Family and care coordinator discussing progress outcomes
+  ctaText: See Our Service Model
+  ctaHref: /our-service-model
+  className: bg-secondary/30
+  points:
+    - title: CQC-Aligned Governance
+      description: Policies, supervision, and audit frameworks support safe and inspection-ready delivery.
+      iconName: tabler:shield-check
+    - title: Continuity of Team
+      description: Consistent staffing and careful matching improve trust, communication, and routine stability.
+      iconName: tabler:heart-handshake
+    - title: Specialist Workforce
+      description: Ongoing competency development across supported living, domiciliary, and complex-needs pathways.
+      iconName: tabler:users-group
+    - title: Review-Led Outcomes
+      description: Clear goals and regular reviews track practical progress and adapt support at the right time.
+      iconName: tabler:trending-up
+  testimonial:
+    quote: Harbor Care gave us a plan we could trust and outcomes we could actually track.
+    initials: AR
+    author: A. Rahman
+    role: Family Representative
+teamSection:
+  heading: Meet Our Leadership Team
+  intro: Experienced leaders focused on quality governance, stable operations, and person-centred outcomes.
+  members:
+    - name: Leanne Dawson
+      role: Registered Manager
+      credentials: NVQ5, CQC Lead
+      description: Leads quality assurance, safeguarding governance, and continuous improvement across all services.
+      imageKey: team-portrait
+      imageAlt: Leanne Dawson, Registered Manager
+    - name: Marcus Reid
+      role: Operations Lead
+      credentials: BSc Health & Social Care
+      description: Oversees service continuity, rota resilience, and multidisciplinary coordination across pathways.
+      imageKey: team-portrait
+      imageAlt: Marcus Reid, Operations Lead
+    - name: Priya Banerjee
+      role: Care Coordination Manager
+      credentials: QCF Level 3
+      description: Coordinates referrals, review cycles, and communication with families and professional stakeholders.
+      imageKey: team-portrait
+      imageAlt: Priya Banerjee, Care Coordination Manager
+contactSection:
+  heading: Plan the Right Care Package
+  intro: Share your referral goals and we will shape a practical support model with clear outcomes and dependable delivery.
+  phoneLabel: 0208 555 0199
+  phoneHref: tel:+442085550199
+  emailLabel: referrals@harborcare.co.uk
+  emailHref: mailto:referrals@harborcare.co.uk
+  emailButtonText: Email Referrals
+  address: Unit 12, Healthcare Business Park, London, SE1 7PB
+  officeTitle: Referrals and Partnerships Desk
+  officeDirectionsText: Get Directions
+  officeDirectionsHref: https://www.google.com/maps/dir//London+Eye,+Riverside+Building,+County+Hall,+London+SE1+7PB
+  hoursTitle: Office Hours
+  officeHours:
+    - day: Monday - Friday
+      time: 8:30 AM - 6:30 PM
+    - day: Saturday
+      time: 10:00 AM - 2:00 PM
+    - day: Sunday
+      time: Closed
+  hoursNote: Emergency support remains available 24/7 for active service users.

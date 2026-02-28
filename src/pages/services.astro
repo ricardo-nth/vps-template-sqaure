@@ -1,87 +1,93 @@
 ---
 import SiteLayout from '@layouts/SiteLayout.astro';
-import { siteConfig } from '@/config/site';
+import { getEntry } from 'astro:content';
 import PageHero from '@components/PageHero.astro';
 import SupportedLivingFeatures from '@components/SupportedLivingFeatures.astro';
 import ServiceSpecialties from '@components/ServiceSpecialties.astro';
 import CompliancePillars from '@components/CompliancePillars.astro';
 import CareDeliveryProcess from '@components/CareDeliveryProcess.astro';
 import ContactSection from '@components/ContactSection.astro';
-import heroBg from '@assets/images/hero-bg.jpg';
+import { getSquareImage } from '@/lib/content/imageRegistry';
 
-const metadata = {
-  title: `Services - ${siteConfig.name}`,
-  description: `Person-centred Supported Living services for adults with diverse needs including learning disabilities, mental health, physical disabilities, older adults, and autism. CQC-registered provider committed to regulatory excellence and outstanding care outcomes.`,
-  schema: {
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: 'Supported Living Services',
-    description: 'Comprehensive, CQC-compliant supported living services promoting independence and dignity.',
-    mainEntity: {
-      '@type': 'Service',
-      name: 'Supported Living Care',
-      description: 'Person-centred supported living for adults with complex needs. Fully CQC registered.',
-      serviceType: 'Supported Living',
-      provider: {
-        '@type': 'Organization',
-        name: siteConfig.name
-      },
-      areaServed: '[Your Service Area]',
-      hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'Care Services',
-        itemListElement: [
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'Service',
-              name: 'Domiciliary Care',
-              url: '/services/complex-care'
-            }
-          },
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'Service',
-              name: 'Live-in Care'
-            }
-          }
-        ]
-      }
-    }
-  }
-};
+const servicesEntry = await getEntry('squareServices', 'default');
+const servicesDomEntry = await getEntry('squareServices', 'dom-care');
+if (!servicesEntry) {
+  throw new Error('Missing content entry: squareServices/default');
+}
+if (!servicesDomEntry) {
+  throw new Error('Missing content entry: squareServices/dom-care');
+}
+
+const metadata = servicesEntry.data.metadata;
+const profiles = [
+  { key: 'supported-living', content: servicesEntry.data },
+  { key: 'dom-care', content: servicesDomEntry.data },
+] as const;
 ---
 
 <SiteLayout metadata={metadata}>
-  <PageHero
-    heading="CQC-Compliant Supported Living Services"
-    subheading="Empowering independence for adults with learning disabilities, mental health needs, autism, physical disabilities, and older adults. Outstanding care from a fully regulated provider you can trust for registration and ongoing compliance."
-    primaryCtaText="Enquire Today"
-    primaryCtaHref="/contact"
-    secondaryCtaText="Explore Services"
-    secondaryCtaHref="#features"
-    imageSrc={heroBg}
-    imageAlt="CQC Compliant Services"
-  />
+  <div data-care-profile-switcher>
+    {profiles.map(({ key, content }) => (
+      <div data-care-profile-panel={key} class:list={{ hidden: key !== 'supported-living' }}>
+        <PageHero
+          heading={content.hero.heading}
+          subheading={content.hero.subheading}
+          primaryCtaText={content.hero.primaryCtaText}
+          primaryCtaHref={content.hero.primaryCtaHref}
+          secondaryCtaText={content.hero.secondaryCtaText}
+          secondaryCtaHref={content.hero.secondaryCtaHref}
+          imageSrc={getSquareImage(content.hero.imageKey)}
+          imageAlt={content.hero.imageAlt}
+        />
 
-  <section id="features">
-    <SupportedLivingFeatures />
-  </section>
+        <section id="features">
+          <SupportedLivingFeatures
+            heading={content.supportedLivingFeatures.heading}
+            subheading={content.supportedLivingFeatures.subheading}
+            features={content.supportedLivingFeatures.features}
+          />
+        </section>
 
-  <ServiceSpecialties />
+        <ServiceSpecialties
+          heading={content.serviceSpecialties.heading}
+          subheading={content.serviceSpecialties.subheading}
+          specialties={content.serviceSpecialties.specialties.map(({ imageKey, ...specialty }) => ({
+            ...specialty,
+            imageSrc: getSquareImage(imageKey),
+          }))}
+        />
 
-  <CompliancePillars />
+        <CompliancePillars
+          badgeLabel={content.compliancePillars.badgeLabel}
+          heading={content.compliancePillars.heading}
+          subheading={content.compliancePillars.subheading}
+          pillars={content.compliancePillars.pillars}
+        />
 
-  <CareDeliveryProcess />
+        <CareDeliveryProcess
+          badgeLabel={content.careDeliveryProcess.badgeLabel}
+          heading={content.careDeliveryProcess.heading}
+          subheading={content.careDeliveryProcess.subheading}
+          steps={content.careDeliveryProcess.steps}
+        />
 
-  <ContactSection
-    heading="[Your Services Page CTA Heading]"
-    intro="[Your services page CTA description - invite visitors to learn more or get in touch]"
-    phoneLabel="[Your Phone]"
-    phoneHref="tel:[YourPhoneNumber]"
-    emailLabel="[email]@yourdomain.co.uk"
-    emailHref="mailto:[email]@yourdomain.co.uk"
-    address="[Your City, Region]"
-  />
+        <ContactSection
+          heading={content.contactSection.heading}
+          intro={content.contactSection.intro}
+          phoneLabel={content.contactSection.phoneLabel}
+          phoneHref={content.contactSection.phoneHref}
+          emailLabel={content.contactSection.emailLabel}
+          emailHref={content.contactSection.emailHref}
+          emailButtonText={content.contactSection.emailButtonText}
+          address={content.contactSection.address}
+          officeTitle={content.contactSection.officeTitle}
+          officeDirectionsText={content.contactSection.officeDirectionsText}
+          officeDirectionsHref={content.contactSection.officeDirectionsHref}
+          hoursTitle={content.contactSection.hoursTitle}
+          officeHours={content.contactSection.officeHours}
+          hoursNote={content.contactSection.hoursNote}
+        />
+      </div>
+    ))}
+  </div>
 </SiteLayout>

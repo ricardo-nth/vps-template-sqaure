@@ -1,0 +1,143 @@
+metadata:
+  title: Harbor Home Care Services
+  description: Reliable domiciliary care services with continuity of carers, safe routines, and practical support that helps adults remain independent at home.
+  schema:
+    '@context': https://schema.org
+    '@type': WebPage
+    name: Harbor Home Care Services
+    description: Reliable domiciliary care services with continuity of carers, safe routines, and practical support that helps adults remain independent at home.
+hero:
+  heading: Home Care That Protects Routine and Independence
+  subheading: We deliver dependable domiciliary visits with clear care planning, continuity of carers, and communication families can trust.
+  profileContent:
+    supported-living:
+      heading: Supported Living With Clear Independence Outcomes
+      subheading: Structured tenancy support that helps adults build life skills, sustain placements, and participate confidently in their communities.
+    dom-care:
+      heading: Domiciliary Care That Families Can Rely On
+      subheading: Reliable home visits with continuity of carers, safe routines, and communication that keeps everyone informed.
+  primaryCtaText: Explore Home Care Services
+  primaryCtaHref: /services
+  secondaryCtaText: Contact Our Team
+  secondaryCtaHref: /contact
+  rating: 97%
+  ratingLabel: On-Time Visit Performance
+  imageKey: hero-bg
+  imageAlt: Domiciliary care worker supporting an adult during a home visit
+  socialProofTitle: 420+ Weekly Visits Delivered
+  socialProofSubtitle: Continuity-led support for families and professionals
+  socialProofCountLabel: 95% primary carer continuity
+servicesOverview:
+  eyebrow: Domiciliary Services
+  heading: Practical Home Support, Delivered Consistently
+  intro: Every package is built around routine, safety, and communication so families get reliable support without constant chasing.
+  ctaText: Explore All Services
+  ctaHref: /services
+  services:
+    - title: Personal Care Visits
+      description: Respectful support with washing, dressing, mobility, and dignity-led morning or evening routines.
+      href: /services
+      imageKey: care-facility
+      imageAlt: Home care professional helping with a daily routine
+    - title: Medication Support
+      description: Prompting and administration support with clear records and escalation when health needs shift.
+      href: /services
+      imageKey: residential-care
+      imageAlt: Care worker checking medication logs during a visit
+    - title: Meal and Nutrition Support
+      description: Planned help with meal preparation, hydration, and nutritional consistency at home.
+      href: /services
+      imageKey: featured-section
+      imageAlt: Carer and client preparing a meal in a home kitchen
+    - title: Wellbeing and Companionship
+      description: Structured social support that reduces isolation and improves emotional wellbeing.
+      href: /services
+      imageKey: wellbeing-support
+      imageAlt: Support worker and service user having a wellbeing conversation
+    - title: Hospital Discharge Reablement
+      description: Transitional support after discharge to rebuild confidence and reduce readmission risk.
+      href: /services
+      imageKey: service-general
+      imageAlt: Domiciliary coordinator reviewing a discharge support plan
+aboutUs:
+  eyebrow: About Our Home Care Team
+  heading: Dependable Delivery With a Human Touch
+  description:
+    - Harbor Home Care combines robust oversight with practical day-to-day support in familiar home settings.
+    - We organise care around routines that matter most, from personal care and medication to companionship and mobility.
+    - Families receive clear communication, predictable scheduling, and responsive escalation when needs change.
+  imageKey: about-team
+  imageAlt: Domiciliary team reviewing schedules and care updates
+  phoneLabel: 0208 555 0199
+  phoneHref: tel:+442085550199
+  sectionId: about
+whyChooseUs:
+  eyebrow: Why Families Choose Harbor Home Care
+  heading: Continuity, Communication, and Safer Daily Routines
+  intro: We focus on operational reliability and practical outcomes that make everyday life more manageable at home.
+  imageKey: featured-section
+  imageAlt: Care coordinator discussing home care progress with family
+  ctaText: See Our Service Model
+  ctaHref: /our-service-model
+  className: bg-secondary/30
+  points:
+    - title: Continuity-Led Rostering
+      description: Stable carer teams reduce disruption and improve trust.
+      iconName: tabler:users-group
+    - title: Safe Medication Workflows
+      description: Documented prompts, administration checks, and escalation routes protect service users.
+      iconName: tabler:shield-check
+    - title: Family-First Communication
+      description: Updates are timely, practical, and easy for relatives and professionals to act on.
+      iconName: tabler:message-circle
+    - title: Outcome-Led Home Support
+      description: Reviews track routine stability, wellbeing, and independent living progress.
+      iconName: tabler:trending-up
+  testimonial:
+    quote: For the first time, our family felt informed and confident in every step of care.
+    initials: SH
+    author: S. Hughes
+    role: Family Representative
+teamSection:
+  heading: Meet Our Domiciliary Leadership Team
+  intro: Experienced managers and coordinators focused on safe, consistent home-care delivery.
+  members:
+    - name: Leanne Dawson
+      role: Registered Manager
+      credentials: NVQ5, CQC Lead
+      description: Oversees quality governance, safeguarding, and home care service standards.
+      imageKey: team-portrait
+      imageAlt: Leanne Dawson, Registered Manager
+    - name: Marcus Reid
+      role: Home Care Operations Lead
+      credentials: BSc Health & Social Care
+      description: Manages continuity, rota resilience, and escalation pathways for domiciliary packages.
+      imageKey: team-portrait
+      imageAlt: Marcus Reid, Home Care Operations Lead
+    - name: Priya Banerjee
+      role: Care Coordination Manager
+      credentials: QCF Level 3
+      description: Coordinates referrals, review scheduling, and communication with families and partner teams.
+      imageKey: team-portrait
+      imageAlt: Priya Banerjee, Care Coordination Manager
+contactSection:
+  heading: Arrange a Reliable Home Care Package
+  intro: Tell us what support is needed and we will map a practical domiciliary plan built around routine and safety.
+  phoneLabel: 0208 555 0199
+  phoneHref: tel:+442085550199
+  emailLabel: referrals@harborcare.co.uk
+  emailHref: mailto:referrals@harborcare.co.uk
+  emailButtonText: Start Home Care Enquiry
+  address: Unit 12, Healthcare Business Park, London, SE1 7PB
+  officeTitle: Home Care Referrals Desk
+  officeDirectionsText: Get Directions
+  officeDirectionsHref: https://www.google.com/maps/dir//London+Eye,+Riverside+Building,+County+Hall,+London+SE1+7PB
+  hoursTitle: Scheduling Hours
+  officeHours:
+    - day: Monday - Friday
+      time: 8:30 AM - 6:30 PM
+    - day: Saturday
+      time: 10:00 AM - 2:00 PM
+    - day: Sunday
+      time: Closed
+  hoursNote: Emergency support remains available 24/7 for active service users.

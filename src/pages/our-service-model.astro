@@ -1,52 +1,78 @@
 ---
 import SiteLayout from '@layouts/SiteLayout.astro';
+import { getEntry } from 'astro:content';
 import PageHero from '@components/PageHero.astro';
 import WhyChooseUs from '@components/WhyChooseUs.astro';
 import CqcJourney from '@components/CqcJourney.astro';
 import ContactSection from '@components/ContactSection.astro';
-import { siteConfig } from '@/config/site';
-import heroBg from '@assets/images/hero-bg.jpg';
+import { getSquareImage } from '@/lib/content/imageRegistry';
 
-const metadata = {
-  title: `Our Service Model - ${siteConfig.name}`,
-  description: 'Our ethos, values, care approach, and CQC registration process for Supported Living.',
-  schema: {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: 'Our Service Model',
-    description: 'Care philosophy and quality commitment.'
-  }
-};
+const serviceModelEntry = await getEntry('squareServiceModel', 'default');
+const serviceModelDomEntry = await getEntry('squareServiceModel', 'dom-care');
+if (!serviceModelEntry) {
+  throw new Error('Missing content entry: squareServiceModel/default');
+}
+if (!serviceModelDomEntry) {
+  throw new Error('Missing content entry: squareServiceModel/dom-care');
+}
+
+const metadata = serviceModelEntry.data.metadata;
+const profiles = [
+  { key: 'supported-living', content: serviceModelEntry.data },
+  { key: 'dom-care', content: serviceModelDomEntry.data },
+] as const;
 ---
 
 <SiteLayout metadata={metadata}>
-  <PageHero
-    heading="A Model Built on <span class='text-accent'>Trust & Excellence</span>"
-    subheading="Our service model is designed around the individual. We combine professional expertise with genuine compassion to create environments where people thrive."
-    primaryCtaText="Contact Us"
-    primaryCtaHref="/contact"
-    secondaryCtaText="Our Values"
-    secondaryCtaHref="#values"
-    imageSrc={heroBg}
-    imageAlt="Healthcare professionals providing care"
-  />
+  <div data-care-profile-switcher>
+    {profiles.map(({ key, content }) => (
+      <div data-care-profile-panel={key} class:list={{ hidden: key !== 'supported-living' }}>
+        <PageHero
+          heading={content.hero.heading}
+          subheading={content.hero.subheading}
+          primaryCtaText={content.hero.primaryCtaText}
+          primaryCtaHref={content.hero.primaryCtaHref}
+          secondaryCtaText={content.hero.secondaryCtaText}
+          secondaryCtaHref={content.hero.secondaryCtaHref}
+          imageSrc={getSquareImage(content.hero.imageKey)}
+          imageAlt={content.hero.imageAlt}
+        />
 
-  <WhyChooseUs
-    eyebrow="Our Ethos"
-    heading="Why Families Choose Us"
-    intro="We don't just provide care; we build partnerships. Our model is founded on transparency, reliability, and an unwavering commitment to quality outcomes."
-    id="values"
-  />
+        <WhyChooseUs
+          eyebrow={content.whyChooseUs.eyebrow}
+          heading={content.whyChooseUs.heading}
+          intro={content.whyChooseUs.intro}
+          imageSrc={getSquareImage(content.whyChooseUs.imageKey)}
+          imageAlt={content.whyChooseUs.imageAlt}
+          id={content.whyChooseUs.id}
+          points={content.whyChooseUs.points}
+          testimonial={content.whyChooseUs.testimonial}
+        />
 
-  <CqcJourney />
+        <CqcJourney
+          badgeLabel={content.cqcJourney.badgeLabel}
+          heading={content.cqcJourney.heading}
+          subheading={content.cqcJourney.subheading}
+          steps={content.cqcJourney.steps}
+        />
 
-  <ContactSection
-    heading="[Your Service Model CTA Heading]"
-    intro="[Your service model CTA description - invite visitors to discuss your approach]"
-    phoneLabel="[Your Phone]"
-    phoneHref="tel:[YourPhoneNumber]"
-    emailLabel="[email]@yourdomain.co.uk"
-    emailHref="mailto:[email]@yourdomain.co.uk"
-    address="[Your City, Region]"
-  />
+        <ContactSection
+          heading={content.contactSection.heading}
+          intro={content.contactSection.intro}
+          phoneLabel={content.contactSection.phoneLabel}
+          phoneHref={content.contactSection.phoneHref}
+          emailLabel={content.contactSection.emailLabel}
+          emailHref={content.contactSection.emailHref}
+          emailButtonText={content.contactSection.emailButtonText}
+          address={content.contactSection.address}
+          officeTitle={content.contactSection.officeTitle}
+          officeDirectionsText={content.contactSection.officeDirectionsText}
+          officeDirectionsHref={content.contactSection.officeDirectionsHref}
+          hoursTitle={content.contactSection.hoursTitle}
+          officeHours={content.contactSection.officeHours}
+          hoursNote={content.contactSection.hoursNote}
+        />
+      </div>
+    ))}
+  </div>
 </SiteLayout>

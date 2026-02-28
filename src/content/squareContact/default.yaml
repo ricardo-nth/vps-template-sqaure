@@ -1,0 +1,77 @@
+metadata:
+  title: Contact Harbor Care Services
+  description: Contact Harbor Care Services for supported living and domiciliary referrals, partnership enquiries, and care planning support.
+  schema:
+    '@context': https://schema.org
+    '@type': ContactPage
+    name: Contact Harbor Care Services
+    description: Contact Harbor Care Services for supported living and domiciliary referrals, partnership enquiries, and care planning support.
+hero:
+  heading: Speak With Our <span class="text-accent">Referrals Team</span>
+  subheading: We support families, professionals, and commissioners with clear next steps for supported living and domiciliary referrals.
+  primaryCtaText: Call Referrals
+  primaryCtaHref: tel:+442085550199
+  secondaryCtaText: Email Referrals
+  secondaryCtaHref: mailto:referrals@harborcare.co.uk
+  quickContactHeading: Quick Contact
+quickContactOptions:
+  - icon: tabler:phone
+    title: Referrals Line
+    value: 0208 555 0199
+    href: tel:+442085550199
+    description: New referrals and urgent placement discussions
+    primary: true
+  - icon: tabler:brand-whatsapp
+    title: WhatsApp Desk
+    value: Message our coordination team
+    href: https://wa.me/442085550199
+    description: Fast responses during office hours
+  - icon: tabler:mail
+    title: Referrals Email
+    value: referrals@harborcare.co.uk
+    href: mailto:referrals@harborcare.co.uk
+    description: We reply within one business day
+contactOptionsSection:
+  heading: Choose the Best Contact Route
+  intro: Our team can support new referrals, service questions, and ongoing package reviews.
+gridContactOptions:
+  - icon: tabler:phone
+    title: Supported Living and Complex Referrals
+    value: 0208 555 0199
+    href: tel:+442085550199
+    description: Discuss placement suitability and intake timelines
+  - icon: tabler:mail
+    title: Partnerships and General Enquiries
+    value: hello@harborcare.co.uk
+    href: mailto:hello@harborcare.co.uk
+    description: Questions about coverage, pathways, and collaboration
+  - icon: tabler:clock-hour-4
+    title: Out-of-Hours Support
+    value: 0800 555 1188
+    href: tel:+448005551188
+    description: Existing service users can access emergency support 24/7
+officeLocation:
+  badgeLabel: Visit Us
+  heading: Our Office
+  intro: We welcome meetings with families and professionals. Contact us first so we can schedule the right team member.
+  officeLabel: Head Office
+  address: Unit 12, Healthcare Business Park, London, SE1 7PB
+  mapUrl: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.540423056448!2d-0.119543!3d51.503324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b900d26973%3A0x4291f3172409ea92!2sLondon%20Eye!5e0!3m2!1sen!2suk!4v1629890000000!5m2!1sen!2suk
+  directionsUrl: https://www.google.com/maps/dir//London+Eye,+Riverside+Building,+County+Hall,+London+SE1+7PB
+  directionsText: Get Directions
+feedbackSection:
+  heading: Compliments and Complaints
+  intro: We log and review all feedback to improve care quality, communication, and service reliability.
+  compliment:
+    title: Leave a Compliment
+    description: Tell us when a team member made a positive difference so we can recognise excellent practice.
+    actionText: Send Compliment
+    actionHref: mailto:feedback@harborcare.co.uk?subject=Compliment
+  complaint:
+    title: Raise a Concern
+    description: If support has fallen below expectation, we will investigate promptly under our formal complaints policy.
+    actionText: File Complaint
+    actionHref: mailto:feedback@harborcare.co.uk?subject=Complaint
+  cqcNote: You can also contact the Care Quality Commission directly if you have concerns about care quality.
+  cqcLinkText: Visit CQC Website
+  cqcLinkHref: https://www.cqc.org.uk/contact-us

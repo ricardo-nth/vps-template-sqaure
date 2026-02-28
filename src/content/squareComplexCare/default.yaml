@@ -1,0 +1,88 @@
+metadata:
+  title: Complex Care Services - Harbor Care Services
+  description: Specialist complex care designed for individuals with higher needs, delivered with compassion, safety, and continuity.
+  schema:
+    '@context': https://schema.org
+    '@type': Service
+    name: Complex Care Services
+    description: Specialist complex care with individualized plans, clinical oversight, and coordinated support for higher-needs clients.
+    serviceType: Complex Care
+    provider:
+      '@type': Organization
+      name: Harbor Care Services
+    areaServed: London and surrounding boroughs
+hero:
+  heading: Complex Care Services
+  subheading: Compassionate, clinically informed support for individuals with complex health needs.
+  profileContent:
+    supported-living:
+      heading: Complex Supported Living Services
+      subheading: Compassionate, clinically informed support for people with complex needs while protecting independence and routine stability.
+    dom-care:
+      heading: Complex Domiciliary Care Services
+      subheading: Specialist home-care support for higher clinical needs with coordinated oversight, safety planning, and continuity.
+  primaryCtaText: Speak to Our Team
+  primaryCtaHref: /contact
+  secondaryCtaText: Our Care Standards
+  secondaryCtaHref: '#quality'
+  imageKey: hero-bg
+  imageAlt: Complex care support team
+whyChooseUs:
+  eyebrow: Complex Care
+  heading: Specialist support built around the individual
+  intro: We combine clinical expertise with person-centred care to deliver safe, reliable complex care that adapts to changing needs and priorities.
+  id: quality
+  points:
+    - title: Nurse-led care planning
+      description: Personalized care plans shaped by clinical assessments, risk management, and ongoing reviews.
+      iconName: tabler:stethoscope
+    - title: Continuity of care
+      description: Consistent staffing and clear handovers to build trust, stability, and better outcomes.
+      iconName: tabler:users-group
+    - title: 24/7 responsive support
+      description: Rapid escalation pathways and round-the-clock availability for complex needs.
+      iconName: tabler:clock-hour-4
+    - title: Quality and safety focus
+      description: Robust governance, medication management, and compliance-driven care delivery.
+      iconName: tabler:shield-check
+cqcJourney:
+  badgeLabel: Quality Assurance
+  heading: Quality assurance you can trust
+  subheading: Transparent, accountable processes that demonstrate our commitment to safe, compliant complex care.
+  steps:
+    - title: Clinical Governance Framework
+      description: Robust policies, procedures, and oversight aligned with CQC standards for complex care delivery.
+      status: completed
+      date: Completed Q2 2024
+    - title: Specialist Staff Training
+      description: Complex care competencies verified through clinical supervision and ongoing professional development.
+      status: completed
+      date: Completed Q3 2024
+    - title: Multi-Disciplinary Partnerships
+      description: Established referral pathways and communication protocols with NHS teams and specialists.
+      status: current
+      date: In Progress
+    - title: Outcome Measurement
+      description: Systematic tracking of clinical outcomes and quality indicators for continuous improvement.
+      status: upcoming
+contactSection:
+  heading: Discuss complex care support
+  intro: Tell us about your needs and we'll guide you through the next steps, from assessment to tailored care planning.
+  phoneLabel: 0208 555 0199
+  phoneHref: tel:+442085550199
+  emailLabel: referrals@harborcare.co.uk
+  emailHref: mailto:referrals@harborcare.co.uk
+  emailButtonText: Start Complex Care Enquiry
+  address: Unit 12, Healthcare Business Park, London, SE1 7PB
+  officeTitle: Complex Care Team
+  officeDirectionsText: Get Directions
+  officeDirectionsHref: https://www.google.com/maps/dir//London+Eye,+Riverside+Building,+County+Hall,+London+SE1+7PB
+  hoursTitle: Assessment Hours
+  officeHours:
+    - day: Monday - Friday
+      time: 9:00 AM - 6:00 PM
+    - day: Saturday
+      time: By appointment
+    - day: Sunday
+      time: Closed
+  hoursNote: Clinical support available 24/7 for active complex care clients.

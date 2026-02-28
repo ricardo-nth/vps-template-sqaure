@@ -2,6 +2,7 @@
 import Icon from '@components/Icon.astro';
 import { Image } from 'astro:assets';
 import logo from '@assets/placeholder-logo.svg';
+import { sharedContactConfig, siteConfig } from '@/config/site';
 
 interface FooterLink {
   label: string;
@@ -22,13 +23,13 @@ interface Props {
 }
 
 const {
-  brandName = "[Business Name]",
-  tagline = "[Your tagline - what you do and your commitment to clients]",
-  address = "[Your City, Region]",
-  phoneLabel = "[Your Phone]",
-  phoneHref = "tel:[YourPhoneNumber]",
-  emailLabel = "[email]@yourdomain.co.uk",
-  emailHref = "mailto:[email]@yourdomain.co.uk",
+  brandName = siteConfig.name,
+  tagline = siteConfig.description,
+  address = sharedContactConfig.address,
+  phoneLabel = sharedContactConfig.phoneLabel,
+  phoneHref = sharedContactConfig.phoneHref,
+  emailLabel = sharedContactConfig.emailLabel,
+  emailHref = sharedContactConfig.emailHref,
   navLinks = [
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
@@ -61,7 +62,7 @@ const currentYear = new Date().getFullYear();
         <a href="/" class="flex items-center gap-3 group">
           <Image
             src={logo}
-            alt="[Business Name] Logo"
+            alt={`${brandName} Logo`}
             class="h-12 w-12 object-contain group-hover:scale-105 transition-transform duration-300"
             loading="eager"
           />

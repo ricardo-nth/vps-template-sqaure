@@ -1,0 +1,86 @@
+metadata:
+  title: Our Home Care Model - Harbor Home Care
+  description: Learn how Harbor Home Care delivers reliable domiciliary services through continuity-led rostering, safeguarding governance, and review-led improvements.
+  schema:
+    '@context': https://schema.org
+    '@type': WebPage
+    name: Our Home Care Model
+    description: Learn how Harbor Home Care delivers reliable domiciliary services through continuity-led rostering, safeguarding governance, and review-led improvements.
+hero:
+  heading: Our Home Care Model, Built for <span class="text-accent">Reliability</span>
+  subheading: We combine person-centred planning, continuity of carers, and strong operational controls to deliver dependable support at home.
+  primaryCtaText: Contact Us
+  primaryCtaHref: /contact
+  secondaryCtaText: Our Principles
+  secondaryCtaHref: '#values'
+  imageKey: hero-bg
+  imageAlt: Domiciliary managers reviewing quality and scheduling
+whyChooseUs:
+  eyebrow: Our Principles
+  heading: Why Our Domiciliary Model Works
+  intro: Clear visit plans, continuity-focused rostering, and governance discipline help families rely on support week after week.
+  imageKey: featured-section
+  imageAlt: Home care team discussing service standards
+  id: values
+  points:
+    - title: Reliable Visit Planning
+      description: Schedules and contingencies are designed to reduce missed visits and disruption.
+      iconName: tabler:calendar-check
+    - title: Continuity of Carers
+      description: Familiar carers improve trust, communication, and routine quality.
+      iconName: tabler:users-group
+    - title: Safe Governance
+      description: Safeguarding, supervision, and audits are embedded in day-to-day operations.
+      iconName: tabler:shield-check
+    - title: Family Communication
+      description: Relatives and professionals receive clear updates and responsive follow-up.
+      iconName: tabler:message-circle
+  testimonial:
+    quote: The service is practical, consistent, and easy for our family to trust.
+    initials: LB
+    author: L. Brown
+    role: Family Representative
+cqcJourney:
+  badgeLabel: Quality and Readiness
+  heading: How We Sustain Home Care Quality
+  subheading: We maintain transparent quality controls and ongoing improvements across all domiciliary packages.
+  steps:
+    - title: Safeguarding and Governance Controls
+      description: Home-care policies, risk workflows, and quality standards implemented across teams.
+      status: completed
+      date: In place
+    - title: Workforce Competency and Supervision
+      description: Ongoing training, competency checks, and supervision sustain consistent frontline practice.
+      status: completed
+      date: Ongoing
+    - title: Continuity and Performance Monitoring
+      description: On-time visits, continuity rates, and communication response standards are reviewed routinely.
+      status: current
+      date: Active
+    - title: Service Improvement Actions
+      description: Feedback, audit findings, and incidents drive targeted improvement actions.
+      status: upcoming
+    - title: Continuous Quality Cycle
+      description: Leadership oversight keeps home-care delivery aligned with evolving needs and evidence.
+      status: upcoming
+contactSection:
+  heading: Build a Better Home Care Package
+  intro: Tell us what matters most and we will map a practical domiciliary model around routine reliability and safety.
+  phoneLabel: 0208 555 0199
+  phoneHref: tel:+442085550199
+  emailLabel: referrals@harborcare.co.uk
+  emailHref: mailto:referrals@harborcare.co.uk
+  emailButtonText: Start Home Care Conversation
+  address: Unit 12, Healthcare Business Park, London, SE1 7PB
+  officeTitle: Home Care Service Team
+  officeDirectionsText: Get Directions
+  officeDirectionsHref: https://www.google.com/maps/dir//London+Eye,+Riverside+Building,+County+Hall,+London+SE1 7PB
+  hoursTitle: Consultation Hours
+  officeHours:
+    - day: Monday - Friday
+      time: 9:00 AM - 6:00 PM
+    - day: Saturday
+      time: 10:00 AM - 2:00 PM
+    - day: Sunday
+      time: Closed
+  hoursNote: Active service users can access emergency support 24/7.

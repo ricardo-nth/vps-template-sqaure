@@ -1,0 +1,197 @@
+metadata:
+  title: Domiciliary Care Services - Harbor Home Care
+  description: Explore domiciliary care services delivered through reliable home visits, continuity of carers, and practical outcome-focused support.
+  schema:
+    '@context': https://schema.org
+    '@type': CollectionPage
+    name: Domiciliary Care Services
+    description: Explore domiciliary care services delivered through reliable home visits, continuity of carers, and practical outcome-focused support.
+    mainEntity:
+      '@type': Service
+      name: Domiciliary Care
+      description: Home-based personal care and practical support pathways for adults.
+      serviceType: Domiciliary Care
+      provider:
+        '@type': Organization
+        name: Harbor Care Services
+      areaServed: London and surrounding boroughs
+hero:
+  heading: Domiciliary Care Services
+  subheading: Reliable home support for adults who need consistent visits, safer routines, and practical daily help.
+  primaryCtaText: Enquire Today
+  primaryCtaHref: /contact
+  secondaryCtaText: Explore Service Types
+  secondaryCtaHref: '#features'
+  imageKey: hero-bg
+  imageAlt: Domiciliary care professional supporting an adult at home
+servicesOverview:
+  eyebrow: Home Care Categories
+  heading: Practical Support Delivered in Familiar Settings
+  intro: Services are designed around routine reliability, safeguarding confidence, and clear communication with families.
+  services:
+    - title: Personal Care
+      description: Support with washing, dressing, hygiene, and dignity-led daily routines.
+      href: /contact
+      imageKey: care-facility
+      imageAlt: Carer assisting with personal care planning
+    - title: Medication and Health Monitoring
+      description: Prompting and administration support with documented records and escalation pathways.
+      href: /contact
+      imageKey: residential-care
+      imageAlt: Care worker managing medication records
+    - title: Meal Preparation and Nutrition
+      description: Help with meal preparation, hydration support, and safe nutrition routines.
+      href: /contact
+      imageKey: featured-section
+      imageAlt: Home care support worker assisting with meal routines
+    - title: Wellbeing and Companionship
+      description: Planned social support to reduce isolation and improve emotional wellbeing.
+      href: /contact
+      imageKey: wellbeing-support
+      imageAlt: Support worker engaging in companionship visit
+    - title: Post-Discharge Home Support
+      description: Structured short-term support following hospital discharge to reduce readmission risk.
+      href: /contact
+      imageKey: service-general
+      imageAlt: Home care review after hospital discharge
+supportedLivingFeatures:
+  heading: Domiciliary Care Done Right
+  subheading: Home support with continuity, safeguarding standards, and communication families can trust.
+  features:
+    - icon: tabler:home-heart
+      title: Care in Familiar Surroundings
+      description: Support is delivered at home to protect comfort and routine confidence.
+    - icon: tabler:user-check
+      title: Personalised Visit Plans
+      description: Visit schedules and tasks are tailored to daily priorities and health needs.
+    - icon: tabler:shield-check
+      title: Safety and Safeguarding
+      description: Risk-aware planning and escalation routes are embedded in every package.
+    - icon: tabler:clock-24
+      title: Reliable Visit Windows
+      description: Continuity-led rostering and backup planning improve dependability.
+    - icon: tabler:message-circle
+      title: Family Communication
+      description: Updates are clear, timely, and actionable for relatives and professionals.
+    - icon: tabler:trending-up
+      title: Outcome Reviews
+      description: Regular review cycles track routine stability, wellbeing, and independence.
+serviceSpecialties:
+  heading: Domiciliary Specialties
+  subheading: Specialist home-care pathways designed around safety, routine, and independence at home.
+  specialties:
+    - title: Complex Medication Routines
+      description: Structured medication support for multi-prescription and time-sensitive regimens.
+      icon: tabler:pill
+      imageKey: service-general
+      features:
+        - Medication records
+        - Prompt and administration support
+        - Clinical escalation pathways
+    - title: Dementia Home Support
+      description: Familiar, routine-led care designed to reduce distress and maintain confidence.
+      icon: tabler:brain
+      imageKey: service-general
+      features:
+        - Consistent carers
+        - Memory-friendly communication
+        - Family partnership updates
+    - title: Mobility and Physical Support
+      description: Practical assistance with movement, transfers, and safer home routines.
+      icon: tabler:wheelchair
+      imageKey: service-general
+      features:
+        - Mobility assistance
+        - Falls risk awareness
+        - Safe transfer support
+    - title: Recovery and Reablement
+      description: Goal-focused support after illness or discharge to rebuild confidence and routine.
+      icon: tabler:activity
+      imageKey: service-general
+      features:
+        - Recovery goals
+        - Daily living progression
+        - Review-based adaptation
+    - title: End-of-Life Home Support
+      description: Compassionate, dignified support coordinated with families and health professionals.
+      icon: tabler:heart-handshake
+      imageKey: service-general
+      features:
+        - Comfort-focused care
+        - Family liaison
+        - Sensitive communication
+    - title: Night and Welfare Checks
+      description: Planned evening and night visits for reassurance and safety.
+      icon: tabler:moon-stars
+      imageKey: service-general
+      features:
+        - Overnight reassurance
+        - Welfare checks
+        - Urgent routine support
+compliancePillars:
+  badgeLabel: CQC Standards
+  heading: Home Care with Evidence-Led Quality Assurance
+  subheading: Domiciliary delivery backed by governance, supervision, and measurable service outcomes.
+  pillars:
+    - icon: tabler:shield-check
+      title: Safe
+      description: Robust risk controls and safeguarding practice embedded in every package.
+      cqcEvidence: Safeguarding and risk reviews completed routinely
+    - icon: tabler:target-arrow
+      title: Effective
+      description: Care plans are linked to practical outcomes and reviewed with stakeholders.
+      cqcEvidence: Outcome-led review schedule
+    - icon: tabler:heart-handshake
+      title: Caring
+      description: Respectful, dignity-led delivery with continuity of familiar carers.
+      cqcEvidence: Strong family feedback trends
+    - icon: tabler:list-details
+      title: Responsive
+      description: Teams adapt quickly to changes in health, mobility, or support priorities.
+      cqcEvidence: Time-bound care plan updates
+    - icon: tabler:crown
+      title: Well-Led
+      description: Accountable leadership and supervision sustain quality across all visits.
+      cqcEvidence: Ongoing audit and supervision cycle
+careDeliveryProcess:
+  badgeLabel: The Journey
+  heading: Our Domiciliary Delivery Process
+  subheading: A practical framework that keeps home support safe, consistent, and tailored to daily life.
+  steps:
+    - number: 1
+      icon: tabler:clipboard-search
+      title: Needs and Home Assessment
+      description: We assess routines, risks, and outcomes with service users, relatives, and professionals.
+    - number: 2
+      icon: tabler:file-text
+      title: Visit Plan Setup
+      description: We agree visit windows, care tasks, communication expectations, and contingencies.
+    - number: 3
+      icon: tabler:users
+      title: Carer Matching and Start
+      description: We allocate trained carers for compatibility and continuity before go-live.
+    - number: 4
+      icon: tabler:refresh
+      title: Ongoing Review
+      description: We monitor outcomes and adapt support as needs evolve.
+contactSection:
+  heading: Arrange Reliable Home Care
+  intro: Share your needs and we will design a domiciliary package built around safety, routine, and reassurance.
+  phoneLabel: 0208 555 0199
+  phoneHref: tel:+442085550199
+  emailLabel: referrals@harborcare.co.uk
+  emailHref: mailto:referrals@harborcare.co.uk
+  emailButtonText: Start Home Care Referral
+  address: Unit 12, Healthcare Business Park, London, SE1 7PB
+  officeTitle: Domiciliary Referrals Desk
+  officeDirectionsText: Get Directions
+  officeDirectionsHref: https://www.google.com/maps/dir//London+Eye,+Riverside+Building,+County+Hall,+London+SE1+7PB
+  hoursTitle: Referrals and Scheduling
+  officeHours:
+    - day: Monday - Friday
+      time: 8:30 AM - 6:30 PM
+    - day: Saturday
+      time: 10:00 AM - 2:00 PM
+    - day: Sunday
+      time: Closed
+  hoursNote: Emergency support line remains available 24/7 for active service users.
