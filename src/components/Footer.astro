@@ -146,9 +146,10 @@ const currentYear = new Date().getFullYear();
 
     <!-- Bottom Bar -->
     <div class="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-sm text-muted-foreground">
-        &copy; {currentYear} {brandName}. All rights reserved.
-      </p>
+      <div class="text-sm text-muted-foreground space-y-1">
+        <p>&copy; {currentYear} {brandName}. All rights reserved.</p>
+        <p>Developed and maintained by Ricardo at <a href="https://vertexplatformsolutions.com/" target="_blank" rel="noopener noreferrer" class="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">Vertex Platform Solutions</a>.</p>
+      </div>
       <ul class="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
         {legalLinks.map((link) => (
           <li>
