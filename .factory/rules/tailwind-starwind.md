@@ -1,1 +1,0 @@
-/Users/admin/Documents/VPS/.factory/rules/tailwind-starwind.md
